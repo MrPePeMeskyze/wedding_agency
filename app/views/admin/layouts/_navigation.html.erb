@@ -1,0 +1,33 @@
+<nav class="navbar navbar-default">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="#">
+			<%= image_tag("logo.jpg", height:"25", :alt => "Wedding") %>
+		</a>
+	</div>
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-nav">
+			<li>
+				<%= link_to "Структура сайта", admin_objects_path %>
+			</li>
+			<li>
+				<%= link_to "Типы объектов", admin_objects_types_path %>
+			</li>
+			<li>
+				<%= link_to "Навигаторы", admin_navigations_path %>
+			</li>
+			<li>
+				<%= link_to "Пользователи", admin_users_path %>
+			</li>
+		</ul>
+		<div class="nav navbar-nav navbar-right">
+				<%= @oUser.title %>,
+				<%= link_to "Выйти", admin_logout_path, class: "btn btn-default navbar-btn", data: { confirm: 'Вы действительно хотите выйти?' } %>
+			</div>
+	</div>
+</nav>
