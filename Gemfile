@@ -51,7 +51,7 @@ gem "rails_serve_static_assets"
 
 gem 'carrierwave'
 
-gem 'rmagick', '~> 2.15', '>= 2.15.4'
+gem 'mini_magick'
 
 gem 'actionmailer'
 
