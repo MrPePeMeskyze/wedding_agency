@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 		resources :objects
 	end
 	namespace :admin do
+		resources :photos
+	end
+	namespace :admin do
 		resources :objects_types
 	end
 	namespace :admin do

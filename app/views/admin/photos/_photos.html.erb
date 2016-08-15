@@ -1,0 +1,16 @@
+<tr <% if !photos.is_published %> class="not_published" <% end %> > 
+	<th style="width:100px">
+		<%= link_to "Удалить", { action: "destroy", id: photos.id },
+            method: :delete, data: { confirm: 'Вы уверены?' },
+            :class => 'text-danger'  %>
+	</th>
+	<th>
+		<%= photos.Name %>
+	</th>
+	<th>
+		<%= image_tag(@photos.image.thumb.url) if @photos.image? %>
+	</th>
+	<th style="width:100px">
+		<%= link_to 'Редактировать', edit_admin_photo_path(photos.id), :class => 'text-success' %>
+	</th>
+</tr> 

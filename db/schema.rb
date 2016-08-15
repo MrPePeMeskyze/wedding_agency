@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421200400) do
+ActiveRecord::Schema.define(version: 20160815160400) do
 
   create_table "navigations", force: true do |t|
     t.string   "name"
@@ -63,6 +63,33 @@ ActiveRecord::Schema.define(version: 20160421200400) do
 
   add_index "objects_types", ["name"], name: "index_objects_types_on_name", using: :btree
 
+  create_table "photos", force: true do |t|
+    t.text     "name"
+    t.boolean  "is_published"
+    t.string   "image"
+    t.integer  "sort_order",   default: 1
+    t.integer  "auser_id",     default: 0
+    t.integer  "object_id",    default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "services", force: true do |t|
+    t.string   "title"
+    t.string   "header"
+    t.text     "body"
+    t.boolean  "is_published"
+    t.string   "permalink"
+    t.string   "image"
+    t.integer  "sort_order",       default: 1
+    t.integer  "object_id",        default: 0
+    t.integer  "auser_id",         default: 0
+    t.text     "meta_keywords"
+    t.text     "meta_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sessions", force: true do |t|
     t.integer  "user_id",   default: 0
     t.string   "sid"
@@ -78,6 +105,17 @@ ActiveRecord::Schema.define(version: 20160421200400) do
     t.string   "name"
     t.string   "last_name"
     t.string   "middle_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "videos", force: true do |t|
+    t.text     "name"
+    t.boolean  "is_published"
+    t.string   "permalink"
+    t.integer  "sort_order",   default: 1
+    t.integer  "auser_id",     default: 0
+    t.integer  "object_id",    default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
