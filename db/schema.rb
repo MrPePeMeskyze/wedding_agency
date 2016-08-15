@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(version: 20160815160400) do
     t.string   "image"
     t.integer  "sort_order",   default: 1
     t.integer  "auser_id",     default: 0
-    t.integer  "object_id",    default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -115,7 +114,6 @@ ActiveRecord::Schema.define(version: 20160815160400) do
     t.string   "permalink"
     t.integer  "sort_order",   default: 1
     t.integer  "auser_id",     default: 0
-    t.integer  "object_id",    default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

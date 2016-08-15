@@ -5,10 +5,12 @@
             :class => 'text-danger'  %>
 	</th>
 	<th>
-		<%= photos.Name %>
+		<%= @photos.name %>
 	</th>
 	<th>
-		<%= image_tag(@photos.image.thumb.url) if @photos.image? %>
+		<% @photos.each do |photo| %>
+	       <%= image_tag photo.image.url(:thumb) %>
+	   <% end %>
 	</th>
 	<th style="width:100px">
 		<%= link_to 'Редактировать', edit_admin_photo_path(photos.id), :class => 'text-success' %>

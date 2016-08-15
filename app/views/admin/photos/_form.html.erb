@@ -1,4 +1,13 @@
 <%= render 'admin/layouts/error_messages', :object => @photo %>
+
+<div class="form-group">
+	<%= f.label :image, "Изображение" %>
+	<%= f.file_field :image %>
+	<%= f.hidden_field :image_cache %>
+</div>
+
+<%= image_tag(@photo.image.general.url) if @photo.image? %>
+
 <div class="row">
 	<div class="col-xs-8">
 		<div class="form-group">
@@ -15,14 +24,6 @@
 			<%= f.text_field :sort_order, class: "form-control" %>
 		</div>
 	</div>
-</div>
-
-<%= image_tag(@photo.image.thumb.url) if @photo.image? %>
-
-<div class="form-group">
-	<%= f.label :image, "Изображение" %>
-	<%= f.file_field :image %>
-	<%= f.hidden_field :image_cache %>
 </div>
 
 <div class="checkbox">
