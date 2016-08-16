@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160815160400) do
+ActiveRecord::Schema.define(version: 20160815180400) do
+
+  create_table "albums", force: true do |t|
+    t.text     "name"
+    t.boolean  "is_published"
+    t.boolean  "is_video",     default: false
+    t.boolean  "is_photo",     default: false
+    t.integer  "sort_order",   default: 1
+    t.integer  "auser_id",     default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "navigations", force: true do |t|
     t.string   "name"
@@ -69,6 +80,7 @@ ActiveRecord::Schema.define(version: 20160815160400) do
     t.string   "image"
     t.integer  "sort_order",   default: 1
     t.integer  "auser_id",     default: 0
+    t.integer  "album_id",     default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -95,6 +107,18 @@ ActiveRecord::Schema.define(version: 20160815160400) do
     t.datetime "dt_access"
   end
 
+  create_table "slides", force: true do |t|
+    t.text     "name"
+    t.boolean  "is_published"
+    t.string   "image"
+    t.integer  "sort_order",   default: 1
+    t.integer  "auser_id",     default: 0
+    t.string   "header"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "login"
     t.string   "email"
@@ -114,6 +138,7 @@ ActiveRecord::Schema.define(version: 20160815160400) do
     t.string   "permalink"
     t.integer  "sort_order",   default: 1
     t.integer  "auser_id",     default: 0
+    t.integer  "album_id",     default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

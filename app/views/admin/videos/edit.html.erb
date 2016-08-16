@@ -1,0 +1,5 @@
+<% provide(:title, 'Редактирование видеозаписи') %>
+<h1>Редактирование видеозаписи <%= @video.name %></h1>
+<%= form_for @video, :url => { :action => :update }, html: { multipart: true } do |f| %>
+	<% render :partial =>'/admin/videos/form', :locals => {:f => f} %>
+<% end %>

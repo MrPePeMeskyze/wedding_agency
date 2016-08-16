@@ -1,0 +1,23 @@
+<% provide(:title, 'Альбомы') %>
+<% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+<h1>Альбомы</h1>
+<table class="table"> 
+	<thead> 
+		<tr> 
+			<th></th> 
+			<th>Название</th> 
+			<th class="text-center">Для фото</th>
+			<th class="text-center">Для видео</th>
+			<th></th>
+		</tr> 
+	</thead> 
+	<tbody> 
+		<%= render partial: "album", collection: @albums, :as => :album %>
+	</tbody>
+</table>
+
+<% content_for :right do %>
+	<%= link_to raw("<span class='glyphicon glyphicon-plus-sign'></span>Добавить"), {:controller => "albums", :action => "new"}, class: "btn btn-success" %>
+<% end %>

@@ -3,7 +3,8 @@ class Objects < ActiveRecord::Base
 
 	validates :header, presence: true, uniqueness: true
 	validates :title, presence: true, uniqueness: true
-	validates :permalink, uniqueness: true
+	validates :permalink, uniqueness: true, presence: true
+	validates :objects_type_id, presence: true
 
 	mount_uploader :image, ImageUploader
 	

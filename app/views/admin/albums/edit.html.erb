@@ -1,0 +1,5 @@
+<% provide(:title, 'Редактирование альбома') %>
+<h1>Редактирование альбома <%= @album.name %></h1>
+<%= form_for @album, :url => { :action => :update }, html: { multipart: true } do |f| %>
+	<% render :partial =>'/admin/albums/form', :locals => {:f => f} %>
+<% end %>

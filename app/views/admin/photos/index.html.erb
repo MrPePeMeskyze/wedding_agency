@@ -5,15 +5,16 @@
 <h1>Фотографии</h1>
 <table class="table"> 
 	<thead> 
-		<tr> 
+		<tr style="vertical-align:middle;"> 
 			<th></th> 
+			<th>Альбом</th>
 			<th>Название</th> 
-			<th>Фото</th>
+			<th class="text-center">Фото</th>
 			<th></th>
 		</tr> 
 	</thead> 
 	<tbody> 
-		<%= render @photos %>
+		<%= render partial: "photo", collection: @photos, :as => :photo %>
 	</tbody>
 </table>
 

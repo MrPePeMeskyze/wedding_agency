@@ -1,0 +1,21 @@
+<tr <% if !photo.is_published %> class="not_published" <% end %> > 
+	<th style="width:100px; vertical-align:middle;">
+		<%= link_to "Удалить", { action: "destroy", id: photo.id },
+            method: :delete, data: { confirm: 'Вы уверены?' },
+            :class => 'text-danger'  %>
+	</th>
+	<th style="vertical-align:middle;">
+		<% if photo.album %>
+			<%= photo.album.name %>
+		<% end %>
+	</th style="vertical-align:middle;">
+	<th style="vertical-align:middle;">
+		<%= photo.name %>
+	</th>
+	<th class="text-center" style="vertical-align:middle;">
+	    <%= image_tag photo.image.url(:thumb) %>
+	</th>
+	<th style="width:100px; vertical-align:middle;">
+		<%= link_to 'Редактировать', edit_admin_photo_path(photo.id), :class => 'text-success' %>
+	</th>
+</tr> 

@@ -2,6 +2,13 @@
   display: inline-block;
   color:red;
 }
+.btn-success{
+    padding-left: 15px;
+}
+.btn.btn-success .glyphicon-plus-sign{
+    top:2px;
+    left:-6px;
+}
 .not_published,
 .not_published a{
 	color: #999;

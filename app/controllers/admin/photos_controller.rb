@@ -2,6 +2,7 @@
 #	
 ##############################################################################
 class Admin::PhotosController < Admin::AdminController
+	before_action :photos_ext, only: [:edit, :update, :new, :create]
 
 	def index
 		@photos = Photos.all.order('is_published desc, sort_order')
@@ -62,10 +63,12 @@ class Admin::PhotosController < Admin::AdminController
 	
 ##############################################################################
 	private
-
+		def photos_ext
+			@albums = Albums.where("is_photo = ? && is_published = ?", true, true).order(:sort_order, :name)
+		end
 	    def photos_params
 	      params.require(:photos)
-	      	.permit(:is_published, :sort_order, :image, :name)
+	      	.permit(:is_published, :sort_order, :image, :name, :album_id)
 	    end
 ##############################################################################
 end

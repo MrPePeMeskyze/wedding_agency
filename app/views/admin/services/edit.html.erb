@@ -1,0 +1,5 @@
+<% provide(:title, 'Редактирование услуги') %>
+<h1>Редактирование услуги <%= @service.header %></h1>
+<%= form_for @service, :url => { :action => :update }, html: { multipart: true } do |f| %>
+	<% render :partial =>'/admin/services/form', :locals => {:f => f} %>
+<% end %>

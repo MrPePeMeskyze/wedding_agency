@@ -1,12 +1,13 @@
-class CreatePhotos < ActiveRecord::Migration
+class CreateSlides < ActiveRecord::Migration
   def change
-    create_table :photos do |t|
+    create_table :slides do |t|
       t.text :name
       t.boolean :is_published 
       t.string :image
       t.integer :sort_order, :default => 1
       t.integer :auser_id, :default => 0
-      t.integer :album_id, :default => 0
+      t.string :header
+      t.text :body
       
       t.timestamps
     end

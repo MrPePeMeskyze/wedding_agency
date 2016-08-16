@@ -6,6 +6,7 @@ class CreateVideos < ActiveRecord::Migration
       t.string :permalink
       t.integer :sort_order, :default => 1
       t.integer :auser_id, :default => 0
+      t.integer :album_id, :default => 0
       
       t.timestamps
     end

@@ -1,0 +1,37 @@
+<%= render 'admin/layouts/error_messages', :object => @album %>
+
+<div class="row">
+	<div class="col-xs-8">
+		<div class="form-group">
+			<%= f.label :name, raw("<div class='required'>&#10039;</div>Название") %>
+			<%= f.text_field :name, class: "form-control" %>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-2">
+		<div class="form-group">
+			<%= f.label :sort_order, "Позиция" %>
+			<%= f.text_field :sort_order, class: "form-control" %>
+		</div>
+	</div>
+</div>
+
+<div class="checkbox">
+	<%= f.check_box(:is_photo) %>
+	<%= label_tag(:albums_is_photo, "Для фотографий") %>
+</div>
+
+<div class="checkbox">
+	<%= f.check_box(:is_video) %>
+	<%= label_tag(:albums_is_video, "Для видео") %>
+</div>
+
+<div class="checkbox">
+	<%= f.check_box(:is_published) %>
+	<%= label_tag(:albums_is_published, "Публиковать") %>
+</div>
+
+<%= f.submit "Сохранить", class: "btn btn-primary" %>
+

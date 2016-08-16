@@ -1,0 +1,21 @@
+<tr <% if !video.is_published %> class="not_published" <% end %> > 
+	<th style="width:100px; vertical-align:middle;">
+		<%= link_to "Удалить", { action: "destroy", id: video.id },
+            method: :delete, data: { confirm: 'Вы уверены?' },
+            :class => 'text-danger'  %>
+	</th>
+	<th style="vertical-align:middle;">
+		<% if video.album %>
+			<%= video.album.name %>
+		<% end %>
+	</th style="vertical-align:middle;">
+	<th style="vertical-align:middle;">
+		<%= video.name %>
+	</th>
+	<th style="vertical-align:middle;">
+	    <%= video.permalink %>
+	</th>
+	<th style="width:100px; vertical-align:middle;">
+		<%= link_to 'Редактировать', edit_admin_video_path(video.id), :class => 'text-success' %>
+	</th>
+</tr> 

@@ -13,6 +13,15 @@ Rails.application.routes.draw do
 		resources :photos
 	end
 	namespace :admin do
+		resources :albums
+	end
+	namespace :admin do
+		resources :services
+	end
+	namespace :admin do
+		resources :videos
+	end
+	namespace :admin do
 		resources :objects_types
 	end
 	namespace :admin do

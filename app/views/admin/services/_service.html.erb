@@ -1,0 +1,14 @@
+<tr <% if !service.is_published %> class="not_published" <% end %> > 
+	<th style="width:100px">
+		<%= link_to "Удалить", { action: "destroy", id: service.id },
+            method: :delete, data: { confirm: 'Вы уверены?' },
+            :class => 'text-danger'  %>
+	</th>
+	<th>
+		<%= service.header %>
+	</th>
+
+	<th style="width:100px">
+		<%= link_to 'Редактировать', edit_admin_service_path(service.id), :class => 'text-success' %>
+	</th>
+</tr> 

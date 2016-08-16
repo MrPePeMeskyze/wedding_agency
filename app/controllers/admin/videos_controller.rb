@@ -2,6 +2,7 @@
 #	
 ##############################################################################
 class Admin::VideosController < Admin::AdminController
+	before_action :videos_ext, only: [:edit, :update, :new, :create]
 
 	def index
 		@videos = Videos.all.order('is_published desc, sort_order')
@@ -11,7 +12,7 @@ class Admin::VideosController < Admin::AdminController
 	
 ##############################################################################
 	def new
-		@videos = Videos.new
+		@video = Videos.new
 	end
 
 
@@ -62,10 +63,12 @@ class Admin::VideosController < Admin::AdminController
 	
 ##############################################################################
 	private
-
+		def videos_ext
+			@albums = Albums.where("is_video = ? && is_published = ?", true, true).order(:sort_order, :name)
+		end
 	    def videos_params
 	      params.require(:videos)
-	      	.permit(:is_published, :sort_order, :permalink, :name)
+	      	.permit(:is_published, :sort_order, :permalink, :name, :album_id)
 	    end
 ##############################################################################
 end

@@ -1,0 +1,28 @@
+<tr <% if !album.is_published %> class="not_published" <% end %> > 
+	<th style="width:100px">
+		<%= link_to "Удалить", { action: "destroy", id: album.id },
+            method: :delete, data: { confirm: 'Вы уверены?' },
+            :class => 'text-danger'  %>
+	</th>
+	<th>
+		<%= album.name %>
+	</th>
+	<th class="text-center">
+		<% if album.is_photo %> 
+			<span class="glyphicon glyphicon-ok"></span>
+		<% else %>
+			<span class="glyphicon glyphicon-remove"></span>
+		<% end %>
+	</th>
+	<th class="text-center">
+		<% if album.is_video %> 
+			<span class="glyphicon glyphicon-ok"></span>
+		<% else %>
+			<span class="glyphicon glyphicon-remove"></span>
+		<% end %>
+	</th>
+
+	<th style="width:100px">
+		<%= link_to 'Редактировать', edit_admin_album_path(album.id), :class => 'text-success' %>
+	</th>
+</tr> 
