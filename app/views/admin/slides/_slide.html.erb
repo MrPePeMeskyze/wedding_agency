@@ -1,0 +1,18 @@
+<tr <% if !slide.is_published %> class="not_published" <% end %> > 
+	<th style="width:100px; vertical-align:middle;">
+		<%= link_to "Удалить", { action: "destroy", id: slide.id },
+            method: :delete, data: { confirm: 'Вы уверены?' },
+            :class => 'text-danger'  %>
+	</th>
+	<th style="vertical-align:middle;">
+		<%= slide.name %>
+	</th>
+	<th class="text-center" style="vertical-align:middle;">
+		<a class="fancybox" href="<%= slide.image.url if slide.image? %>">
+	    	<%= image_tag slide.image.url(:thumb) %>
+	    </a>
+	</th>
+	<th style="width:100px; vertical-align:middle;">
+		<%= link_to 'Редактировать', edit_admin_slide_path(slide.id), :class => 'text-success' %>
+	</th>
+</tr> 

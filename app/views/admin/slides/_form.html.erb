@@ -1,4 +1,4 @@
-<%= render 'admin/layouts/error_messages', :object => @photo %>
+<%= render 'admin/layouts/error_messages', :object => @slide %>
 
 <div class="row">
 	<div class="col-xs-8">
@@ -12,10 +12,15 @@
 <div class="row">
 	<div class="col-xs-8">
 		<div class="form-group">
-			<%= label_tag(:album_id, raw("<div class='required'>&#10039;</div> Альбом")) %>
-			<%= f.select :album_id, @albums.map{ |albums| [albums.name, albums.id] }.insert(0,'--'),{}, { :class => 'form-control'} %>
+			<%= f.label :header, "Заголовок" %>
+			<%= f.text_field :header, class: "form-control" %>
 		</div>
 	</div>
+</div>
+
+<div class="form-group">
+	<%= f.label :body, raw("Описание") %>
+	<%= f.text_area :body, class: "form-control" %>
 </div>
 
 <div class="row">
@@ -26,9 +31,10 @@
 		</div>
 	</div>
 </div>
-<a class="fancybox" href="<%= @photo.image.url if @photo.image? %>">
-	<%= image_tag(@photo.image.thumb.url) if @photo.image? %>
+<a class="fancybox" href="<%= @slide.image.url if @slide.image? %>">
+	<%= image_tag(@slide.image.thumb.url) if @slide.image? %>
 </a>
+
 <div class="form-group">
 	<%= f.label :image, raw("<div class='required'>&#10039;</div>Изображение") %>
 	<%= f.file_field :image %>
@@ -37,7 +43,7 @@
 
 <div class="checkbox">
 	<%= f.check_box(:is_published) %>
-	<%= label_tag(:photos_is_published, "Публиковать") %>
+	<%= label_tag(:slides_is_published, "Публиковать") %>
 </div>
 
 <%= f.submit "Сохранить", class: "btn btn-primary" %>

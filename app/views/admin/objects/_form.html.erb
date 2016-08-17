@@ -66,7 +66,9 @@
 </div>
 
 <div class="form-group">
-	<%= image_tag(@object.image.thumb.url) if @object.image? %>
+	<a class="fancybox" href="<%= @object.image.url if @object.image? %>">
+		<%= image_tag(@object.image.thumb.url) if @object.image? %>
+	</a>
 </div>
 <div class="form-group">
 	<%= f.label :image, "Изображение" %>

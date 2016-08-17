@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email, index: true
       t.string :password
       t.boolean :is_admin 
-      t.boolean :is_published
+      t.boolean :is_published, :default => true
       t.string :name
       t.string :last_name
       t.string :middle_name

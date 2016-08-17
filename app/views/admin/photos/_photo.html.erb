@@ -13,7 +13,9 @@
 		<%= photo.name %>
 	</th>
 	<th class="text-center" style="vertical-align:middle;">
-	    <%= image_tag photo.image.url(:thumb) %>
+		<a class="fancybox" href="<%= photo.image.url if photo.image? %>">
+	    	<%= image_tag photo.image.url(:thumb) %>
+	    </a>
 	</th>
 	<th style="width:100px; vertical-align:middle;">
 		<%= link_to 'Редактировать', edit_admin_photo_path(photo.id), :class => 'text-success' %>

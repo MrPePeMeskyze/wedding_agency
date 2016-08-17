@@ -64,7 +64,7 @@ class Admin::ServicesController < Admin::AdminController
 	private
 	    def services_params
 	      params.require(:services)
-	      	.permit(:title, :header, :body, :is_published, :permalink, :image, :sort_order, :meta_keywords, :meta_description)
+	      	.permit(:title, :header, :logo, :body, :is_published, :permalink, :image, :sort_order, :meta_keywords, :meta_description)
 	    end
 ##############################################################################
 end

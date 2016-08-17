@@ -1,0 +1,5 @@
+<% provide(:title, 'Добавление слайда') %>
+<h1>Добавление слайда</h1>
+<%= form_for [:admin, @slide], :url => { :action => :create }, html: { multipart: true } do |f| %>
+	<% render :partial =>'admin/slides/form', :locals => {:f => f} %>
+<% end %>

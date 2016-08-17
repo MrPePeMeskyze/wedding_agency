@@ -5,7 +5,7 @@ class Admin::PhotosController < Admin::AdminController
 	before_action :photos_ext, only: [:edit, :update, :new, :create]
 
 	def index
-		@photos = Photos.all.order('is_published desc, sort_order')
+		@photos = Photos.all.includes(:album).order('albums.sort_order is null, albums.sort_order, photos.is_published desc, photos.sort_order')
 	end
 
 

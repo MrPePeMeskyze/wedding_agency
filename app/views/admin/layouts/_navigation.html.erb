@@ -19,23 +19,40 @@
 				<%= link_to "Услуги", admin_services_path %>
 			</li>
 			<li>
-				<%= link_to "Альбомы", admin_albums_path %>
+				<%= link_to "Слайды", admin_slides_path %>
 			</li>
-			<li>
-				<%= link_to "Изображения", admin_photos_path %>
+			<li class="dropdown"> 
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					Портфолио <span class="caret"></span>
+				</a> 
+				<ul class="dropdown-menu">
+					<li>
+						<%= link_to "Альбомы", admin_albums_path %>
+					</li>
+					<li>
+						<%= link_to "Изображения", admin_photos_path %>
+					</li>
+					<li>
+						<%= link_to "Видеозаписи", admin_videos_path %>
+					</li>
+				</ul> 
 			</li>
-			<li>
-				<%= link_to "Видеозаписи", admin_videos_path %>
-			</li>
-			<!-- <li>
-				<%= link_to "Типы объектов", admin_objects_types_path %>
-			</li> -->
-			<li>
-				<%= link_to "Навигаторы", admin_navigations_path %>
-			</li>
-			<li>
-				<%= link_to "Пользователи", admin_users_path %>
-			</li>
+			<li class="dropdown"> 
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					Настройки <span class="caret"></span>
+				</a> 
+				<ul class="dropdown-menu">
+					<!-- <li>
+						<%= link_to "Типы объектов", admin_objects_types_path %>
+					</li> -->
+					<li>
+						<%= link_to "Навигаторы", admin_navigations_path %>
+					</li>
+					<li>
+						<%= link_to "Пользователи", admin_users_path %>
+					</li>
+				</ul> 
+			</li>		
 		</ul>
 		<div class="nav navbar-nav navbar-right">
 				<%= @oUser.title %>,

@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 		resources :albums
 	end
 	namespace :admin do
+		resources :slides
+	end
+	namespace :admin do
 		resources :services
 	end
 	namespace :admin do

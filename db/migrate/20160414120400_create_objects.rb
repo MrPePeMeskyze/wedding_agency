@@ -5,7 +5,7 @@ class CreateObjects < ActiveRecord::Migration
       t.string :header
       t.text :body
       t.text :additional_body
-      t.boolean :is_published 
+      t.boolean :is_published, :default => true
       t.string :permalink
       t.string :full_path
       t.string :image
