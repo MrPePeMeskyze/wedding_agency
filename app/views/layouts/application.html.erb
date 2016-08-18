@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%= render partial: "layouts/head" %>
+  <body>  
+    <%= render partial: "layouts/preloader" %>
+    <%= render partial: "layouts/top_button" %>
+    <header id="header">
+      <%= render partial: "layouts/top_pannel" %>  
+    </header>
+  	<%= render partial: "layouts/feedback_modal" %> 
 
-	<%= render 'layouts/head' %>
+  	<%= yield %>				
 
-	<%= render 'layouts/header' %>
-	<body>
-		<main>
-			<div class="container">
-				<%= yield %>
-			</div>
-		</main>
+    <%= render partial: "layouts/footer" %>
 
-		<%= render 'layouts/footer' %>
-
-		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 	</body>
 </html>

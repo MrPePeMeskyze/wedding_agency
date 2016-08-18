@@ -2,7 +2,9 @@ class PagesController < ApplicationController
 	before_action :init
 ##############################################################################
 	def index
-		
+		$services = Services.where("is_published = ?", 1).order("sort_order ASC, header")
+		$videos = Videos.where("is_published = ?", 1).order("sort_order ASC, header").limit(6)
+		$photos = Photos.where("is_published = ?", 1).order("sort_order ASC, header").limit(8)
 	end
 
 

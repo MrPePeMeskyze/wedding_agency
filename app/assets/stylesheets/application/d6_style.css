@@ -270,7 +270,7 @@ img{
 .navbar-brand {
   color: #fff !important;
   font-family: 'Cinzel Decorative', cursive;
-  font-size: 26px;
+  font-size: 20px;
   font-weight: bold;
   margin-top: 5px;
   width: 300px;
@@ -734,7 +734,7 @@ img{
 }
 .single-service > p {
   color: #8997a7;
-  font-size: 15px;
+  font-size: 18px;
   letter-spacing: 0.5px;
   line-height: 25px;
 }
@@ -807,7 +807,6 @@ img{
 }
 .whyChoose-right{
 	float: left;
-	margin-top: 30px;
 	display: inline;
 	width: 100%;
 	padding: 0px 20px;
@@ -840,7 +839,7 @@ img{
 }
 .whyChoose-right .media-body > p {
   color: #6d6d6d;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.4em;
 }
 .whyChoose-right .media:hover .media-icon{
@@ -1550,7 +1549,6 @@ figure.blog-figure:hover .image-effect::before {
 .footer-social{
 	float: left;
 	display: inline;
-	width: 100%;
 	text-align: right;
 }
 .footer-social a {  
@@ -2700,7 +2698,7 @@ a.gallery-iteam:hover .image-effect::before {
 
 @media(max-width:1199px ){
   .navbar-default .navbar-nav > li > a {padding: 18px 6px;font-size: 13px;}
-  .navbar-brand {font-size: 20px;width: 258px;}
+  .navbar-brand {font-size: 18px;width: 258px;}
   .doctors-nav figcaption h2 {font-size: 14px;}
   .doctors-nav figcaption p {font-size: 14px;padding: 0 12px;}
   .nav-tabs > li > a {padding: 10px 10px;}
@@ -2709,7 +2707,7 @@ a.gallery-iteam:hover .image-effect::before {
 
 @media(max-width:991px ){	
   .navbar-header {float: none;text-align: center;}
-  .navbar-brand {display: inline-block;float: none;font-size: 25px;width: 290px;}
+  .navbar-brand {display: inline-block;float: none;font-size: 18px;width: 290px;}
   .sl-slider h2 {font-size: 36px;line-height: 40px;}
   .sl-slider p {font-size: 25px;}
   .sl-slider-wrapper {height: 500px;}
@@ -2785,7 +2783,7 @@ a.gallery-iteam:hover .image-effect::before {
 
 
 @media(max-width:360px ){
-.navbar-brand {float: left;font-size: 20px;width: 250px;}
+.navbar-brand {float: left;font-size: 16px;width: 250px;}
 .navbar-default .navbar-brand {margin-bottom: 10px;margin-top: 5px;}
 .navbar-brand > i {font-size: 25px;}
 .slider-text {width: 90%;}
@@ -2830,4 +2828,23 @@ a.gallery-iteam:hover .image-effect::before {
 }
 
 	
+}
+.navbar-header .readmore_area{
+	margin-top:10px;
+}
+
+#advantages, 
+#video_main{
+	float: left;
+	display: inline;
+	width: 100%;
+	padding: 75px 0px;
+}
+
+#gallery_main{
+	background-color: #f7f7f7;
+	float: left;
+	display: inline;
+	width: 100%;
+	padding: 75px 0px;
 }
