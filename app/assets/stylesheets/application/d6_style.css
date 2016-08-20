@@ -24,6 +24,72 @@
 /*--------------------*/
 /* BASIC TYPOGRAPHY */
 /*--------------------*/
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../application/icomoon.eot?os804e');
+  src:  url('../application/icomoon.eot?os804e#iefix') format('embedded-opentype'),
+    url('../application/icomoon.ttf?os804e') format('truetype'),
+    url('../application/icomoon.woff?os804e') format('woff'),
+    url('../application/icomoon.svg?os804e#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-businessmen:before {
+  content: "\e907";
+}
+.icon-clap:before {
+  content: "\e908";
+}
+.icon-productivity:before {
+  content: "\e909";
+}
+.icon-responsive-design-for-modern-monitors:before {
+  content: "\e90a";
+}
+.icon-smiling-emoticon-square-face:before {
+  content: "\e90b";
+}
+.icon-wedding-arch:before {
+  content: "\e900";
+}
+.icon-graduate-cap:before {
+  content: "\e901";
+}
+.icon-birthday-cake:before {
+  content: "\e902";
+}
+.icon-stemware:before {
+  content: "\e903";
+}
+.icon-wedding-rings:before {
+  content: "\e904";
+}
+.icon-crowd-of-users:before {
+  content: "\e905";
+}
+.icon-presentation:before {
+  content: "\e906";
+}
+
+
+
+
 
 body,html{
   overflow-x:hidden;
@@ -172,6 +238,7 @@ img{
 }
 .navbar-default {
 	padding: 10px 0;
+	padding-bottom: 0px;
 	-moz-transition: padding 0.3s ease 0s;
 	-o-transition: padding 0.3s ease 0s;
 	-webkit-transition: padding 0.3s ease 0s;
@@ -181,7 +248,7 @@ img{
 	padding: 0px;
 }
 .main-nav{
-	margin : 10px 0px;
+	margin : 15px 0px;
 }
 .navbar-default .navbar-nav > li > a::before {
 	position: absolute;
@@ -221,8 +288,8 @@ img{
 }
 .navbar-right .dropdown-menu {
   left: auto;
-  right: 15px;
-  top: 74px;
+  right: 28px;
+  top: 48px;
 }
 .navbar-right .dropdown-menu::before {
 	background: none repeat scroll 0 0 #fff;
@@ -242,8 +309,8 @@ img{
 	z-index: -99
 }
 .dropdown-menu > li > a {
-     clear: both;
-    color: #c3c3c3;
+    clear: both;
+    color: black;
     display: block;
     font-weight: bold;
     line-height: 1.42857;
@@ -270,10 +337,10 @@ img{
 .navbar-brand {
   color: #fff !important;
   font-family: 'Cinzel Decorative', cursive;
-  font-size: 20px;
+  font-size: 17px;
+  margin-top:10px;
   font-weight: bold;
-  margin-top: 5px;
-  width: 300px;
+  width: 250px;
 }
 .navbar-brand img{
 	width: 100%;
@@ -290,7 +357,6 @@ img{
 #sliderArea {
   display: inline;
   float: left;
-  margin-top: 70px;
   width: 100%;
 }
 .top-slider{
@@ -319,9 +385,9 @@ img{
 .top-slider .slick-prev,
 .top-slider .slick-next {
 	background-color: transparent;
-	border: 2px solid #ccc;
+	border: 2px solid black;
 	border-radius: 50%;
-	color: #ccc;
+	color: black;
 	cursor: pointer;
 	display: block;
 	font-size: 0;
@@ -1466,6 +1532,7 @@ figure.blog-figure:hover .image-effect::before {
 }
 .single-footer-widget .section-heading{
 	text-align: left;
+	height:57px;
 }
 .single-footer-widget .section-heading > h2 {
   font-size: 20px;
@@ -1529,9 +1596,8 @@ figure.blog-figure:hover .image-effect::before {
   width: 100%;
 }
 .footer-copyright{
-	float: left;
-	display: inline;
-	width: 100%;
+    margin-top: 134px;
+    margin-left: -60px;
 }
 .footer-copyright>p{
 	margin-bottom: 0px;
@@ -1595,7 +1661,6 @@ figure.blog-figure:hover .image-effect::before {
 #blogArchive {
   display: inline;
   float: left;
-  margin-top: 90px;
   width: 100%;
 }
 .blog-breadcrumbs-area {
@@ -2477,7 +2542,7 @@ a.gallery-iteam:hover .image-effect::before {
   padding: 15px;
 }
 .wpcf7-submit {
-	float: left;
+	margin:0 auto !important;
 	min-width: 150px;
 	max-width: 250px;
 	font-weight: 600;
@@ -2726,14 +2791,16 @@ a.gallery-iteam:hover .image-effect::before {
   .social-share h3 {text-align: center;width: 100%;}
   .social-share ul {width: 100%;margin-top: 15px;text-align: center;}
   .nav-tabs {width: 100%;}
+  .single-footer-widget{padding:0px;}
   .how-works-area {margin-top: 30px;}
   .nav-tabs > li > a {font-size: 18px;padding: 10px 20px;}
   .button--itzel {width: 190px;} 
-  #header .navbar-right {float: none !important;display: inline-block;} 
+   #header .feedback-block .readmore_area {float: none; margin: 0 auto !important;}
   .navbar-collapse.collapse {text-align: center;}
   #respond input[type="text"], #respond input[type="email"], #respond input[type="url"] {width: 80%;} 
   .slider-text h2 {font-size: 45px;line-height: 50px;}
   .slider-text p {font-size: 25px;}
+  .footer-copyright{margin-left: -22px;}
 
 }
 
@@ -2744,6 +2811,7 @@ a.gallery-iteam:hover .image-effect::before {
 .navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{background-color: transparent;}
 .navbar-default .navbar-brand {margin-bottom: 10px;margin-top: 0;}
 #sliderArea {margin-top: 70px;}
+.navbar-right .dropdown-menu{right:-135px}
 .navbar-right .dropdown-menu::before {display: none;}
 .whychoose-singleslide img {width: 100%;}
 .whyChoose-left {width: 100%;}
@@ -2756,7 +2824,6 @@ a.gallery-iteam:hover .image-effect::before {
 .single-footer-widget {margin-bottom: 30px;}
 .footer-copyright {text-align: center;}
 .footer-social {margin-top: 20px;text-align: center;}
-#blogArchive {margin-top: 81px;}
 .blog-pagination {margin-bottom: 30px;text-align: center;}
 .sidebar-widget {margin-bottom: 35px;}
 .blogArchive-area .single-blog-right {width: 75%;}
@@ -2830,7 +2897,8 @@ a.gallery-iteam:hover .image-effect::before {
 	
 }
 .navbar-header .readmore_area{
-	margin-top:10px;
+	margin-top:20px;
+	margin-right: -50px;
 }
 
 #advantages, 
@@ -2847,4 +2915,56 @@ a.gallery-iteam:hover .image-effect::before {
 	display: inline;
 	width: 100%;
 	padding: 75px 0px;
+}
+.feedback-header{
+	width: 182px;
+}
+.feedback-header a{
+	font-size: 1em;
+}
+.navbar-header .contact-info p,
+.navbar-header .contact-info a,
+.navbar-header .contact-info .fa{
+	color:white;
+	font-size: 14px;
+}
+.navbar-header .contact-info a span,
+.navbar-header .contact-info p span{
+	font-size: 18px;
+    margin-right: 10px;
+}
+.navbar-header .contact-info > p{
+	line-height: 0px;
+}
+.navbar-header .readmore_area a{
+	margin:0px;
+	margin-left: 10px;
+}
+.navbar-header .contact-info{
+	margin-top:5px;
+}
+.appointment-form .alert{
+	border-color: red;
+}
+.feedback-succsess{
+    font-size: 18px;
+    color: #694198;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.navbar-fixed-top{
+	position:relative;
+}
+.navbar{
+	margin-bottom: 0px;
+}
+.service-logo{
+	width: 70px;
+    height: auto;
+    position: absolute;
+    top: 21px;
+    left: 11px;
+}
+.contact-info a{
+	color: #555;
 }

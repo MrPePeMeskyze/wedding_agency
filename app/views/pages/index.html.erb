@@ -11,7 +11,7 @@
           </div>
           <div class="service-content">
             <div class="row">
-            	<%= render partial: "services/service" %> 
+            	<%= render partial: "services/service", collection: @services, :as => :service %>
            	</div>
           </div>
         </div>
@@ -36,12 +36,10 @@
           </div>
           <div class="my-simple-gallery">
             <div class="row">
-            	<%= render partial: "photos/photo" %>        
+            	<%= render partial: "photos/photo", collection: @photos, :as => :photo %>       
             </div>
           </div>
-
           <%= render partial: "photos/gallery" %> 
-          
         </div>
       </div>
     </div>
@@ -59,7 +57,7 @@
           </div>
           <div class="my-simple-gallery">
             <div class="row">
-              <%= render partial: "videos/video" %>        
+              <%= render partial: "videos/video", collection: @videos, :as => :video %>       
             </div>
           </div>
         </div>

@@ -33,16 +33,16 @@ jQuery(function($){
 	/* ----------------------------------------------------------- */
 
 	// For fixed top bar
-       $(window).scroll(function(){
-        if($(window).scrollTop() >50 /*or $(window).height()*/){
-            $(".navbar-fixed-top").addClass('past-main');
-            $(".navbar-right .dropdown-menu").css('top','70px');   
-        }
-    else{    	
-      $(".navbar-fixed-top").removeClass('past-main');
-      $(".navbar-right .dropdown-menu").css('top','75px');
-      }
-    });
+    //   $(window).scroll(function(){
+    //    if($(window).scrollTop() >50 /*or $(window).height()*/){
+    //         $(".navbar-fixed-top").addClass('past-main');
+    //        $(".navbar-right .dropdown-menu").css('top','70px');   
+    //    }
+    //else{    	
+    //  $(".navbar-fixed-top").removeClass('past-main');
+    //  $(".navbar-right .dropdown-menu").css('top','75px');
+    //  }
+    //});
     
 
     /* ----------------------------------------------------------- */
@@ -176,13 +176,50 @@ jQuery(function($){
 
 	
 	$('#accordion .panel-collapse').on('shown.bs.collapse', function () {
-	$(this).prev().find(".fa").removeClass("fa-plus").addClass("fa-minus");
+		$(this).prev().find(".fa").removeClass("fa-plus").addClass("fa-minus");
 	});
 	
 	//The reverse of the above on hidden event:
 	
 	$('#accordion .panel-collapse').on('hidden.bs.collapse', function () {
-	$(this).prev().find(".fa").removeClass("fa-minus").addClass("fa-plus");
+		$(this).prev().find(".fa").removeClass("fa-minus").addClass("fa-plus");
 	});	
 	
+
+	$('.feedback-button').click(function(event){
+		$(this).closest('.appointment-form').find('input').removeClass('alert')
+		var fio = $(this).closest('.appointment-form').find('#fio');
+		var email = $(this).closest('.appointment-form').find('#email')
+		var body = $(this).closest('.appointment-form').find('#body')
+		var phone = $(this).closest('.appointment-form').find('#phone')
+		if(fio.val() == ""){
+			fio.addClass("alert");
+		}
+		if(email.val() == ""){
+			email.addClass("alert");
+		}
+		if(body.val() == ""){
+			body.addClass("alert");
+		}
+		if(fio.val() != "" && email.val() != "" && body.val() != ""){
+			$.ajax({
+			  url: "/sendmail", data: 'fio='+fio.val()+'&email='+email.val()+'&body='+body.val()+'&phone='+phone.val(), 
+			  format: 'json',
+			  dataType: 'json',
+			  type: "POST",
+			  error: function(data){
+			    alert('Server error');
+			  }
+			});
+			$(this).closest(".appointment-form").hide();
+			$(this).closest(".modal-body").find(".appointment-msg").show();
+			$(this).closest(".modal-body").find(".appointment-msg").html("<div class='feedback-succsess col-md-12 col-sm-12'>Сообщение успешно отправлено!</div>")
+		}
+	});
+	$('.feedback-header a').click(function(event){
+		$(".appointment-form").show();
+		$(".appointment-msg").hide();
+		document.getElementById("feedback").reset();
+	});
+
 });

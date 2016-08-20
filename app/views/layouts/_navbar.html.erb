@@ -1,11 +1,22 @@
 <div id="navbar" class="navbar-collapse collapse navbar-left">
   <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
-	<li class="active"><a href="index.html">Home</a></li>
-	<li class="dropdown">
-	  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Service <span class="fa fa-angle-down"></span></a>
-	  <ul class="dropdown-menu" role="menu">
-		<li><a href="medical-counseling.html">Medical Counseling</a></li>
-	  </ul>
-	</li>
+  	<% @main_navigation = Objects.where("is_published = 1 and objects.sort_order <> 0").order("sort_order ASC").joins(:main_navigations) %>
+	<% @main_navigation.each do |object| %>
+		<li>
+			<% if object.id == 2 %>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <%= object.header %> <span class="fa fa-angle-down"></span></a>
+				  <ul class="dropdown-menu" role="menu">
+				  	<% @services = Services.where("is_published = 1").order("sort_order ASC") %>
+				  	<% @services.each do |service| %>
+						<li><%= link_to_service service.header, service_path(service.permalink) %></li>
+					<% end %>
+				  </ul>
+				</li>
+			<% else %>
+				<%= link_to_object object.header, object %>
+			<% end %>
+		</li>
+	<% end %>
   </ul>           
 </div>

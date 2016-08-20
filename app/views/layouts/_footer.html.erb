@@ -10,11 +10,29 @@
             <div class="line"></div>
           </div>
           <ul class="footer-service">
-            <li><a href="#"><span class="fa fa-check"></span>Service 1</a></li>
-            <li><a href="#"><span class="fa fa-check"></span>Service 2</a></li>
-            <li><a href="#"><span class="fa fa-check"></span>Service 3</a></li>
-            <li><a href="#"><span class="fa fa-check"></span>Service 4</a></li>
-            <li><a href="#"><span class="fa fa-check"></span>Service 5</a></li>
+            <% @services.limit(4).each do |service| %>
+              <li>
+                 <%= link_to service.permalink, :class => 'button white' do %>
+                    <span class="fa fa-check"></span><%= service.header %>
+                 <% end %>
+              </li>
+            <% end %>
+          </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+          <div class="single-footer-widget">
+            <div class="section-heading">
+              <h2> </h2>
+          </div>
+          <ul class="footer-service">
+            <% @services.offset(4).each do |service| %>
+              <li>
+                 <%= link_to service.permalink, :class => 'button white' do %>
+                    <span class="fa fa-check"></span><%= service.header %>
+                 <% end %>
+              </li>
+            <% end %>
           </ul>
           </div>
         </div>
@@ -28,28 +46,20 @@
             <p><span class="fa fa-phone"></span>+7(925)202-46-26</p>
             <p><span class="fa fa-phone"></span>+7(903)965-90-90</p>
             <p><span class="fa fa-envelope"></span>irina_svadba@bk.ru</p>
-            <div class="footer-social">              
-	            <a href="#"><span class="fa fa-vk"></span></a>
-	        </div>
+            <p><span class="fa fa-vk"></span>
+              <a target="_blank" href="https://new.vk.com/irina_fbr_prazdnik">Вконтакте</a>
+            </p>
           </address>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <!-- Start Footer Middle -->
-  <div class="footer-middle">
-    <div class="container">
-      <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <div class="footer-copyright">
-          <p>&copy; Copyright <a href="/">Ведущая важных событий Ирина Баранова</a></p>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+          <div class="single-footer-widget">
+            <div class="footer-copyright">
+              <p>&copy;<a href="/">Ведущая важных событий Ирина Баранова</a>, <%= Time.now.year %></p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        
-      </div>
-    </div>
     </div>
   </div>
 </footer>

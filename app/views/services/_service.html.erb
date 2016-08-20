@@ -1,10 +1,13 @@
 <div class="col-lg-4 col-md-4">
-	<div class="single-service">
-		<div class="service-icon">
-			<span class="fa fa-stethoscope service-icon-effect"></span>  
-		</div>                      
-		<h3><a href="#">Cardio Monitoring</a></h3>
-		<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-	</div>
+	<%= link_to service.permalink do %>
+		<div class="single-service">
+			<div class="service-icon">
+				<span class="service-icon-effect <%= service.logo_class %>" ></span>  
+			</div>                      
+			<h3>
+				<%= service.header %>
+			</h3>
+		</div>
+	<%end%>
 </div>
             

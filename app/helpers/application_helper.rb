@@ -19,6 +19,14 @@ module ApplicationHelper
 			link_to(name)
 		end
 	end
+	def link_to_service(name, object, options = {})
+		@url = object
+		## Добавляем закрывающий слэш к ссылку, если ссыдка не содержит параметров и не ссылка на сайт
+		if(!(/\?/).match(@url) && !(/(\.\w+|\/)$/).match(@url))
+			@url = @url+"/"
+		end
+		link_to(name, @url, options)
+	end
 	def in_object(object)
 		if ((/#{object.full_path}/).match(request.url))
 			link_to(object.header, object.full_path)

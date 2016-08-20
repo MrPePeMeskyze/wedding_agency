@@ -37,6 +37,10 @@ Rails.application.routes.draw do
 		resources :users
 	end
 
+	get '/services/:id', to: 'services#view', as: 'service'
+
+	post'sendmail' , to: 'pages#sendmail', defaults: { format: 'json' }
+	
 	## Выборка пермалинков для статических страниц
 	@__static = Objects.where("objects_type_id = ?", ENV['STATIC_PAGES_ID'])
     @__static = (@__static.map do |_static| "#{_static.permalink}" end).join('|')

@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 20160815180400) do
     t.boolean  "is_published"
     t.string   "permalink"
     t.string   "image"
-    t.string   "logo"
+    t.string   "logo_class"
     t.integer  "sort_order",       default: 1
     t.integer  "auser_id",         default: 0
     t.text     "meta_keywords"

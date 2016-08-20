@@ -1,10 +1,13 @@
 class PagesController < ApplicationController
 	before_action :init
+	respond_to :html, :json
+	skip_before_filter :verify_authenticity_token, only: [:sendmail]
 ##############################################################################
 	def index
-		$services = Services.where("is_published = ?", 1).order("sort_order ASC, header")
-		$videos = Videos.where("is_published = ?", 1).order("sort_order ASC, header").limit(6)
-		$photos = Photos.where("is_published = ?", 1).order("sort_order ASC, header").limit(8)
+		@services = Services.where("is_published = ?", 1).order("sort_order ASC, header")
+		@videos = Videos.where("is_published = ?", 1).order("sort_order ASC, name").limit(6)
+		@photos = Photos.where("is_published = ?", 1).order("sort_order ASC, name").limit(8)
+		@slides = Slides.where("is_published = ?", 1).order("sort_order ASC, name")
 	end
 
 
@@ -16,7 +19,18 @@ class PagesController < ApplicationController
 
 
 ##############################################################################
+	def sendmail
+	      fio = params[:fio]
+	      email = params[:email]
+	      phone = params[:phone]
+	      body = params[:body]
+	      Feedback.contact(fio, email, phone, body).deliver 
+	      head :no_content
+	end
 
+
+
+##############################################################################
 	private
 		def init
 			## Перехват на 404, вызов exception
