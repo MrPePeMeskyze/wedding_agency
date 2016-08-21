@@ -28,7 +28,7 @@
                 <div class="line"></div>
               </div>
               <div class="row">
-                <%= render partial: "photos/photo", collection: album.photos, :as => :photo %>
+                <%= render partial: "videos/video", collection: album.videos, :as => :video %>
               </div>
             </div>
           <% end %>
@@ -37,4 +37,3 @@
     </div>
   </div>
 </section>
-<%= render partial: "photos/gallery" %> 

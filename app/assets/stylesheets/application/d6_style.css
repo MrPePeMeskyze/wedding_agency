@@ -126,8 +126,7 @@ h2 {
   font-size: 30px;
   font-weight: 700;
   line-height: 40px;
-  margin: 0;
-  padding-bottom: 10px;  
+  margin: 0; 
 }
 img{
  border:none;
@@ -662,6 +661,7 @@ img{
 }
 .section-heading{
 	float: left;
+	margin-top:10px;
 	display: inline;
 	width: 100%;
 	text-align: center;
@@ -1391,6 +1391,7 @@ img{
 	width: 78%;
 }
 .blog-img{
+	padding-bottom:20px;
 	float: left;
 	display: inline;
 	width: 100%;
@@ -1698,7 +1699,7 @@ figure.blog-figure:hover .image-effect::before {
 .blogArchive-area {
   display: inline;
   float: left;
-  padding: 70px 0;
+  padding: 0 0;
   width: 100%;
 }
 .blog-content{
@@ -2915,6 +2916,9 @@ a.gallery-iteam:hover .image-effect::before {
 	display: inline;
 	width: 100%;
 	padding: 0px 0px;
+}
+#gallery_main.gallery_photo_video{
+	background-color: initial;
 }
 .feedback-header{
 	width: 182px;

@@ -1,0 +1,53 @@
+<% @title = @service.title.to_s %>
+<section id="blogArchive">      
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <div class="blog-breadcrumbs-area">
+        <div class="container">
+          <div class="blog-breadcrumbs-left">
+            <ol class="breadcrumb">
+              <li><a href="/">Главная</a></li>                  
+              <li class="active"><%= @service.header %></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>        
+  </div>  
+   <div class="row">
+      <div class="col-lg-12 col-md-12">
+      	  <div class="service-area">
+	          <div class="section-heading">
+	            <h2><%= @service.header %></h2>
+	            <div class="line"></div>            
+	          </div>              
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 col-sm-12">
+                <div class="blogArchive-area">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12">  
+                      <div class="blog-content">
+                        <div class="single-Blog">  
+	                        <div class="blog-img">
+	                          <figure class="blog-figure">
+	                           	<%= image_tag(@service.image.url(:service_image), :alt => @service.header) %>
+	                            <span class="image-effect"></span>
+	                          </figure>
+	                        </div>
+	                        <div class="blog-content blog-details">
+	                            <%= raw(@service.body) %>
+	                        </div>                      
+                      </div>
+                    </div>                     
+                  </div>
+                </div>                   
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+</section>
+   

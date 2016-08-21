@@ -5,9 +5,6 @@
       <div class="blog-breadcrumbs-area">
         <div class="container">
           <div class="blog-breadcrumbs-left">
-            <h2><%= @object.header %></h2>
-          </div>
-          <div class="blog-breadcrumbs-right">
             <ol class="breadcrumb">
               <li><a href="/">Главная</a></li>                  
               <li class="active"><%= @object.header %></li>
@@ -16,22 +13,22 @@
         </div>
       </div>
     </div>        
+  </div>
+  <div class="container static_pages">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <div class="service-area">
+          <div class="section-heading">
+            <h2><%= @object.header %></h2>
+            <div class="line"></div>            
+          </div>              
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12">
+        <div class="row">
+            <%= raw(@object.body) %>
+        </div>
+      </div>          
+    </div>
   </div>      
 </section>
-<div class="container static_pages">
-  <div class="row">
-    <div class="col-lg-12 col-md-12">
-      <div class="service-area">
-        <div class="section-heading">
-          <h2><%= @object.title %></h2>
-          <div class="line"></div>            
-        </div>              
-      </div>
-    </div>
-    <div class="col-lg-12 col-md-12">
-      <div class="row">
-        	<%= raw(@object.body) %>
-      </div>
-    </div>          
-  </div>
-</div>
