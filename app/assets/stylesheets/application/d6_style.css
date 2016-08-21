@@ -223,18 +223,18 @@ img{
 }
 .navbar-default .navbar-nav > li > a {	
 	color: #fff;
-	position: relative;
-	display: inline-block;	
-	outline: none;	
-	padding: 15px 10px;
-	text-decoration: none;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: bold;
-	text-shadow: 0 0 1px rgba(255,255,255,0.3);	
-	-webkit-transition: color 0.3s;
-	-moz-transition: color 0.3s;
-	transition: color 0.3s;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    padding: 15px 7px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    font-weight: bold;
+    text-shadow: 0 0 1px rgba(255,255,255,0.3);
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
 }
 .navbar-default {
 	padding: 10px 0;
@@ -2811,7 +2811,7 @@ a.gallery-iteam:hover .image-effect::before {
 .navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{background-color: transparent;}
 .navbar-default .navbar-brand {margin-bottom: 10px;margin-top: 0;}
 #sliderArea {margin-top: 70px;}
-.navbar-right .dropdown-menu{right:-135px}
+.navbar-right .dropdown-menu{ left: 0px; top: 47px;}
 .navbar-right .dropdown-menu::before {display: none;}
 .whychoose-singleslide img {width: 100%;}
 .whyChoose-left {width: 100%;}
@@ -2914,7 +2914,7 @@ a.gallery-iteam:hover .image-effect::before {
 	float: left;
 	display: inline;
 	width: 100%;
-	padding: 75px 0px;
+	padding: 0px 0px;
 }
 .feedback-header{
 	width: 182px;
@@ -2967,4 +2967,12 @@ a.gallery-iteam:hover .image-effect::before {
 }
 .contact-info a{
 	color: #555;
+}
+p{
+	color: #6d6d6d;
+    font-size: 18px;
+    line-height: 1.4em;
+}
+.static_pages{
+	margin-bottom:40px;
 }

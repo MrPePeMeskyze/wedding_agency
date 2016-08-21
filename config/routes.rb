@@ -37,6 +37,10 @@ Rails.application.routes.draw do
 		resources :users
 	end
 
+	resources :photos
+
+	resources :videos
+
 	get '/services/:id', to: 'services#view', as: 'service'
 
 	post'sendmail' , to: 'pages#sendmail', defaults: { format: 'json' }
@@ -54,4 +58,5 @@ Rails.application.routes.draw do
 	get ':controller(/:action(/:id))'
 
 	get '*not_found', to: 'application#not_found'
+	
 end

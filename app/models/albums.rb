@@ -2,7 +2,7 @@ class Albums < ActiveRecord::Base
 
 	validates :name, presence: true
 
-	has_many :albums,
+	has_many :photos,
 		class_name: "Photos", 
 		foreign_key: "album_id"
 

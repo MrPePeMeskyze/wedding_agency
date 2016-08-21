@@ -14,40 +14,44 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
 	    for(var i = 0; i < numNodes; i++) {
 
+            figureEl = thumbElements[i]; // <figure> element
 
-	        figureEl = thumbElements[i]; // <figure> element
+            // include only element nodes
+            if(figureEl.nodeType !== 1) {
+                continue;
+            }
 
-	        // include only element nodes 
-	        if(figureEl.nodeType !== 1) {
-				continue;
-	        }
+            linkEl = figureEl.children[0]; // <a> element
 
-			linkEl = figureEl.children[0]; // <a> element
-			
-	        size = linkEl.getAttribute('data-size').split('x');
+            //Instead of asking for height and width please calculate it for us We are lazy ;) Juni
 
-	        // create slide object
-	        item = {
-				src: linkEl.getAttribute('href'),
-				w: parseInt(size[0], 10),
-				h: parseInt(size[1], 10)
-	        };
+            var j_width = $(window).width() - 100;
+            var j_height = $(window).height();
+            size = [j_width, j_height]
 
-	        
+            // create slide object
+            item = {
+                src: linkEl.getAttribute('href'),
+                w: parseInt(size[0], 10),
+                h: parseInt(size[1], 10)
+            };
 
-	        if(figureEl.children.length > 1) {
-	        	// <figcaption> content
-	          	item.title = figureEl.children[1].innerHTML; 
-	        }
- 
-	        if(linkEl.children.length > 0) {
-	        	// <img> thumbnail element, retrieving thumbnail url
-				item.msrc = linkEl.children[0].getAttribute('src');
-	        } 
-	       
-			item.el = figureEl; // save link to element for getThumbBoundsFn
-	        items.push(item);
-	    }
+
+
+            if(figureEl.children.length > 1) {
+                // <figcaption> content
+                item.title = figureEl.children[1].innerHTML;
+            }
+
+            if(linkEl.children.length > 0) {
+                // <img> thumbnail element, retrieving thumbnail url
+                item.msrc = linkEl.children[0].getAttribute('src');
+            }
+
+            item.el = figureEl; // save link to element for getThumbBoundsFn
+
+            items.push(item);
+        }
 
 	    return items;
 	};
@@ -171,7 +175,20 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 	    }
 
 	    // Pass data to PhotoSwipe and initialize it
-	    gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+	    gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+
+	    gallery.listen('imageLoadComplete', function(index, item) {
+	      var linkEl = item.el.children[0];
+	      var img = item.container.children[0];
+	      if (!linkEl.getAttribute('data-size')) {
+	        linkEl.setAttribute('data-size', img.naturalWidth + 'x' + img.naturalHeight);
+	        item.w = img.naturalWidth;
+	        item.h = img.naturalHeight;
+	        gallery.invalidateCurrItems();
+	        gallery.updateSize(true);
+	      }
+	    });
+
 	    gallery.init();
 	};
 

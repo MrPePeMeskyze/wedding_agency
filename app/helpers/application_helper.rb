@@ -1,6 +1,6 @@
 module ApplicationHelper
 	def full_title(page_title)
-		standart_title = '"Title for SEO'
+		standart_title = 'Ведущая важных событий Ирина Баранова'
 		if page_title.empty?
 			standart_title
 		else
