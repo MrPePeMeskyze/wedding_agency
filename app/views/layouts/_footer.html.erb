@@ -12,7 +12,7 @@
           <ul class="footer-service">
             <% @services.limit(4).each do |service| %>
               <li>
-                 <%= link_to service.permalink, :class => 'button white' do %>
+                 <%= link_to service_path(service.permalink), :class => 'button white' do %>
                     <span class="fa fa-check"></span><%= service.header %>
                  <% end %>
               </li>
@@ -28,7 +28,7 @@
           <ul class="footer-service">
             <% @services.offset(4).each do |service| %>
               <li>
-                 <%= link_to service.permalink, :class => 'button white' do %>
+                 <%= link_to service_path(service.permalink), :class => 'button white' do %>
                     <span class="fa fa-check"></span><%= service.header %>
                  <% end %>
               </li>
