@@ -9,7 +9,7 @@
 		  <div class="appointment-msg">
 		  </div>
 		  <div class="appointment-area">
-			<%= form_tag sendmail_path, :remote => true, class: "appointment-form", :id => "feedback", :onsubmit => "return false;" do %>
+			<%= form_tag sendmail_path, class: "appointment-form", :id => "feedback", :onsubmit => "return false;" do %>
 				<div class="col-md-12 col-sm-12">
 				  <label class="control-label">Представьтесь <span class="required">*</span>
 				  </label>
