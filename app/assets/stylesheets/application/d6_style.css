@@ -95,7 +95,7 @@ body,html{
   overflow-x:hidden;
 }
 body {
-padding-right: 0 !important;
+padding-right: 0px !important;
 font-family: 'Habibi', serif;
 overflow-x: hidden !important;
 }
@@ -2448,12 +2448,13 @@ a.gallery-iteam:hover .image-effect::before {
   display: block;
   font-size: 18px;
   font-weight: bold;
-  left: 0;
+  left: 15px;
+  background-color: rgba(0, 0, 0, 0.3);
   margin-top: -23px;
   padding-bottom: 10px;
   position: absolute;
   text-align: center;
-  width: 100%;
+  width: 90%;
 }
 .pswp__caption__center {
   font-size: 25px;
@@ -2670,13 +2671,18 @@ a.gallery-iteam:hover .image-effect::before {
 	display: inline;
 	width: 100%;
 }
-#myModal .modal-content {
+#myModal .modal-content,
+#review_modal .modal-content{
   background: #fff none repeat scroll 0 0;
   border-radius: 0;
   float: left;
   width: 100%;
 }
-#myModal .modal-title {
+.review-button{
+	cursor: pointer;
+}
+#myModal .modal-title,
+#review_modal .modal-title {
   line-height: 1.42857;
   margin: 0;
   font-size: 30px;  
@@ -2871,7 +2877,7 @@ a.gallery-iteam:hover .image-effect::before {
 .social-share h3 {font-size: 20px;}
 .nav-tabs > li > a {font-size: 10px;padding: 3px;}
 .custom-panel .panel-heading a {font-size: 16px;}
-#myModal .modal-title {font-size: 25px;}
+#myModal .modal-title, #review_modal .modal-title {font-size: 25px;}
 .post-author .news-img {margin-right: 0px;width: 45px;height: 45px;}
 .author-name {font-size: 13px;margin-bottom: 5px;display: block;}
 .post-author p {font-size: 12px;line-height: 18px;}
@@ -2891,7 +2897,7 @@ a.gallery-iteam:hover .image-effect::before {
 .blog-breadcrumbs-right .breadcrumb > li a {font-size: 12px;}	
 .blog-breadcrumbs-right .breadcrumb > .active {font-size: 12px;}
 .custom-panel .panel-heading a {font-size: 14px;}
-#myModal .modal-title {font-size: 22px;}
+#myModal .modal-title, #review_modal .modal-title {font-size: 22px;}
 #respond input[type="text"], #respond input[type="email"], #respond input[type="url"] {
   width: 100%;
 }

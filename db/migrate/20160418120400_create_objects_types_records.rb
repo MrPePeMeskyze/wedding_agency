@@ -5,5 +5,6 @@ class CreateObjectsTypesRecords < ActiveRecord::Migration
   	ObjectsTypes.create(name: "Услуги", sort_order: "2")
   	ObjectsTypes.create(name: "Фото", sort_order: "3")
   	ObjectsTypes.create(name: "Видео", sort_order: "4")
+  	ObjectsTypes.create(name: "Отзывы", sort_order: "5")
   end
 end

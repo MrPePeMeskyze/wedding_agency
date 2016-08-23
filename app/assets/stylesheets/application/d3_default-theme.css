@@ -10,7 +10,7 @@
 .blog-breadcrumbs-right .breadcrumb > li a:hover,.blog-breadcrumbs-right .breadcrumb > .active,.blog-details blockquote::before,.blog-details blockquote::after,
 .sidebar-widget p>a,.sidebar-widget>ul li>a:hover,.postnav-left:hover .navg-title,.postnav-right:hover .navg-title,.author-name:hover,
 .similar-post .media-body a:hover,.similar-post > h2,.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover,
-.button--itzel .button__icon,.button--itzel > span,#myModal .modal-title,
+.button--itzel .button__icon,.button--itzel > span,#myModal .modal-title, #review_modal .modal-title,
 .form-submit input:hover,.error-page-area h1,.error-page-area h3{
   color: #694198;   
 }
@@ -145,9 +145,6 @@
 .form-submit input {
   background-color: #694198;
   border: 1px solid #694198;
-}
-.pswp__caption__center {
-  color: #694198 !important;
 }
 .pswp__button--arrow--left::before, .pswp__button--arrow--right::before {
   background-color: #694198 !important;    
