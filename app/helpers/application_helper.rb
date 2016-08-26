@@ -1,7 +1,7 @@
 module ApplicationHelper
 	def full_title(page_title)
 		standart_title = 'Ведущая важных событий Ирина Баранова'
-		if page_title.empty?
+		if page_title == nil
 			standart_title
 		else
 			"#{page_title}"

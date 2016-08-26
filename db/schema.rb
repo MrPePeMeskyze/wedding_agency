@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160815180400) do
+ActiveRecord::Schema.define(version: 20160816180400) do
 
   create_table "albums", force: true do |t|
     t.text     "name"
-    t.boolean  "is_published"
-    t.boolean  "is_video",     default: false
-    t.boolean  "is_photo",     default: false
-    t.integer  "sort_order",   default: 1
-    t.integer  "auser_id",     default: 0
+    t.boolean  "is_published",    default: true
+    t.boolean  "is_video",        default: false
+    t.boolean  "is_photo",        default: false
+    t.integer  "sort_order",      default: 1
+    t.integer  "auser_id",        default: 0
+    t.boolean  "is_video_review", default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -37,7 +38,7 @@ ActiveRecord::Schema.define(version: 20160815180400) do
     t.string   "header"
     t.text     "body"
     t.text     "additional_body"
-    t.boolean  "is_published"
+    t.boolean  "is_published",     default: true
     t.string   "permalink"
     t.string   "full_path"
     t.string   "image"
@@ -76,11 +77,25 @@ ActiveRecord::Schema.define(version: 20160815180400) do
 
   create_table "photos", force: true do |t|
     t.text     "name"
-    t.boolean  "is_published"
+    t.boolean  "is_published", default: true
     t.string   "image"
     t.integer  "sort_order",   default: 1
     t.integer  "auser_id",     default: 0
     t.integer  "album_id",     default: 0
+    t.integer  "service_id",   default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reviews", force: true do |t|
+    t.integer  "session_id"
+    t.boolean  "is_published", default: false
+    t.string   "fio"
+    t.integer  "rate"
+    t.string   "event"
+    t.string   "avatar"
+    t.date     "date"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -89,7 +104,7 @@ ActiveRecord::Schema.define(version: 20160815180400) do
     t.string   "title"
     t.string   "header"
     t.text     "body"
-    t.boolean  "is_published"
+    t.boolean  "is_published",     default: true
     t.string   "permalink"
     t.string   "image"
     t.string   "logo_class"
@@ -109,7 +124,7 @@ ActiveRecord::Schema.define(version: 20160815180400) do
 
   create_table "slides", force: true do |t|
     t.text     "name"
-    t.boolean  "is_published"
+    t.boolean  "is_published", default: true
     t.string   "image"
     t.integer  "sort_order",   default: 1
     t.integer  "auser_id",     default: 0
@@ -124,7 +139,7 @@ ActiveRecord::Schema.define(version: 20160815180400) do
     t.string   "email"
     t.string   "password"
     t.boolean  "is_admin"
-    t.boolean  "is_published"
+    t.boolean  "is_published", default: true
     t.string   "name"
     t.string   "last_name"
     t.string   "middle_name"
@@ -134,7 +149,7 @@ ActiveRecord::Schema.define(version: 20160815180400) do
 
   create_table "videos", force: true do |t|
     t.text     "name"
-    t.boolean  "is_published"
+    t.boolean  "is_published", default: true
     t.string   "permalink"
     t.integer  "sort_order",   default: 1
     t.integer  "auser_id",     default: 0

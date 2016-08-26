@@ -19,6 +19,15 @@
 </div>
 
 <div class="row">
+	<div class="col-xs-8">
+		<div class="form-group">
+			<%= label_tag(:service_id, raw("Услуга")) %>
+			<%= f.select :service_id, @services.map{ |services| [services.header, services.id] }.insert(0,'--'),{}, { :class => 'form-control'} %>
+		</div>
+	</div>
+</div>
+
+<div class="row">
 	<div class="col-xs-2">
 		<div class="form-group">
 			<%= f.label :sort_order, "Позиция" %>

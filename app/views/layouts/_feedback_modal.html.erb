@@ -9,7 +9,7 @@
 		  <div class="appointment-msg">
 		  </div>
 		  <div class="appointment-area">
-			<%= form_tag sendmail_path, :remote => true, class: "appointment-form", :id => "feedback", :onsubmit => "return false;" do %>
+			<%= form_tag sendmail_path, class: "appointment-form", :id => "feedback", :onsubmit => "return false;" do %>
 				<div class="col-md-12 col-sm-12">
 				  <label class="control-label">Представьтесь <span class="required">*</span>
 				  </label>
@@ -28,10 +28,12 @@
 				<div class="col-md-12 col-sm-12">    
 			  		<textarea id="body" name="body" class="wp-form-control wpcf7-textarea" cols="30" rows="10" placeholder="Сообщение..."></textarea>
 			  	</div>
-				<button class="feedback-button text-center wpcf7-submit button--itzel" type="submit">
-					<i class="button__icon fa fa-share"></i>
-					<span>Отправить сообщение</span>
-				</button>  
+			  	<div class="col-md-12 col-sm-12"> 
+					<button class="feedback-button text-center wpcf7-submit button--itzel" type="submit">
+						<i class="button__icon fa fa-share"></i>
+						<span>Отправить сообщение</span>
+					</button>  
+				</div>
 			<%end%>
 		  </div>
 		</div>                    

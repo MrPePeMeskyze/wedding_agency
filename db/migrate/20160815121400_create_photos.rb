@@ -7,7 +7,8 @@ class CreatePhotos < ActiveRecord::Migration
       t.integer :sort_order, :default => 1
       t.integer :auser_id, :default => 0
       t.integer :album_id, :default => 0
-      
+      t.integer :service_id, :default => 0
+	  
       t.timestamps
     end
   end

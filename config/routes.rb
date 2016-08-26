@@ -41,6 +41,9 @@ Rails.application.routes.draw do
 
 	resources :videos
 
+	resources :reviews
+
+
 	get '/services/:id', to: 'services#view', as: 'service'
 
 	post'sendmail' , to: 'pages#sendmail', defaults: { format: 'json' }

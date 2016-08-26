@@ -7,7 +7,9 @@
     <header id="header">
       <%= render partial: "layouts/top_pannel" %>  
     </header>
-  	<%= render partial: "layouts/feedback_modal" %> 
+  	<%= render partial: "layouts/feedback_modal" %>
+    
+    <%= yield :reviews_modal %> 
 
   	<%= yield %>				
 

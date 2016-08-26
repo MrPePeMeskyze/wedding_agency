@@ -3,7 +3,7 @@
   	<% @main_navigation = Objects.where("is_published = 1 and objects.sort_order <> 0").order("sort_order ASC").joins(:main_navigations) %>
 	<% @main_navigation.each do |object| %>
 		<li>
-			<% if object.id == 2 %>
+			<% if object.objects_type_id == 3 %>
 				<li class="dropdown">
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <%= object.header %> <span class="fa fa-angle-down"></span></a>
 				  <ul class="dropdown-menu" role="menu">

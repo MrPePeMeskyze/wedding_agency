@@ -56,6 +56,7 @@ gem 'mini_magick'
 gem 'actionmailer'
 
 gem 'capistrano', '~> 2.15.5'
+
 platforms :ruby do # linux
 	gem 'unicorn'
 end
