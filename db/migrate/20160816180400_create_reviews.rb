@@ -4,9 +4,11 @@ class CreateReviews < ActiveRecord::Migration
       t.integer :session_id
       t.boolean :is_published, :default => false
       t.string :fio
-      t.integer :rate
-      t.text :dignity
-      t.text :limitations  
+      t.float :rate
+	    t.string :event
+	    t.string :avatar
+	    t.date :date
+      t.text :body
       t.timestamps
     end
   end

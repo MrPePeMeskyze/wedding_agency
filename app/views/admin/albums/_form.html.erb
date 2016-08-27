@@ -29,6 +29,11 @@
 </div>
 
 <div class="checkbox">
+	<%= f.check_box(:is_video_review) %>
+	<%= label_tag(:albums_is_video_review, "Для видео отзывов") %>
+</div>
+
+<div class="checkbox">
 	<%= f.check_box(:is_published) %>
 	<%= label_tag(:albums_is_published, "Публиковать") %>
 </div>

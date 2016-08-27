@@ -15,11 +15,12 @@ ActiveRecord::Schema.define(version: 20160816180400) do
 
   create_table "albums", force: true do |t|
     t.text     "name"
-    t.boolean  "is_published", default: true
-    t.boolean  "is_video",     default: false
-    t.boolean  "is_photo",     default: false
-    t.integer  "sort_order",   default: 1
-    t.integer  "auser_id",     default: 0
+    t.boolean  "is_published",    default: true
+    t.boolean  "is_video",        default: false
+    t.boolean  "is_photo",        default: false
+    t.integer  "sort_order",      default: 1
+    t.integer  "auser_id",        default: 0
+    t.boolean  "is_video_review", default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -81,6 +82,20 @@ ActiveRecord::Schema.define(version: 20160816180400) do
     t.integer  "sort_order",   default: 1
     t.integer  "auser_id",     default: 0
     t.integer  "album_id",     default: 0
+    t.integer  "service_id",   default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reviews", force: true do |t|
+    t.integer  "session_id"
+    t.boolean  "is_published", default: false
+    t.string   "fio"
+    t.integer  "rate"
+    t.string   "event"
+    t.string   "avatar"
+    t.date     "date"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

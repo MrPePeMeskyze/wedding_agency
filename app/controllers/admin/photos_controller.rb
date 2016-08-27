@@ -65,10 +65,11 @@ class Admin::PhotosController < Admin::AdminController
 	private
 		def photos_ext
 			@albums = Albums.where("is_photo = ? && is_published = ?", true, true).order(:sort_order, :name)
+			@services = Services.where("is_published = ?", true).order(:sort_order, :header)
 		end
 	    def photos_params
 	      params.require(:photos)
-	      	.permit(:is_published, :sort_order, :image, :name, :album_id)
+	      	.permit(:is_published, :sort_order, :image, :name, :album_id, :service_id)
 	    end
 ##############################################################################
 end

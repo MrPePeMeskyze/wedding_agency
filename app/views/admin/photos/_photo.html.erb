@@ -12,6 +12,11 @@
 	<th style="vertical-align:middle;">
 		<%= photo.name %>
 	</th>
+	<th style="vertical-align:middle;">
+		<% if photo.service %>
+			<%= photo.service.header %>
+		<% end %>
+	</th>
 	<th class="text-center" style="vertical-align:middle;">
 		<a class="fancybox" href="<%= photo.image.url if photo.image? %>">
 	    	<%= image_tag photo.image.url(:thumb) %>

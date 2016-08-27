@@ -40,6 +40,16 @@
 	                            <%= raw(@service.body) %>
 	                        </div>                      
                       </div>
+                      <div class="whyChoose-left service-slider">
+                        <div class="whychoose-slider">
+                          <% @service.photos.each do |photo| %>
+                            <div class="whychoose-singleslide">
+                              <%= image_tag(photo.image.url, :alt => photo.name) %>
+                              <div class="caption_description"><%= photo.name %></div>
+                            </div>
+                          <% end %>
+                        </div>
+                      </div>
                     </div>                     
                   </div>
                 </div>                   
