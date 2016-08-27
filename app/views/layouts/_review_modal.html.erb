@@ -9,12 +9,12 @@
 		  <div class="appointment-msg">
 		  </div>
 		  <div class="appointment-area">
-			<form accept-charset="UTF-8" action="/reviews" class="appointment-form" data-remote="true" id="new_reviews" enctype="multipart/form-data" method="post">
-				<div style="display:none"><input name="utf8" type="hidden" value="✓"></div>
+		  	<% @reviews = Reviews.new %>
+		  	<%= form_for @reviews, :format => 'js', :url => { :action => :create }, html: { multipart: true, :class => "appointment-form" }, :remote => true do |f| %>
 				<div class="col-md-12 col-sm-12">
 				  <label class="control-label">Представьтесь <span class="required">*</span>
 				  </label>
-				  <input id="fio" name="reviews[fio]" type="text" class="wp-form-control wpcf7-text" placeholder="ФИО">
+				  <input id="review_fio" name="reviews[fio]" type="text" class="wp-form-control wpcf7-text" placeholder="ФИО">
 				</div>
 				<div class="col-md-6 col-sm-6">
 				  <label class="control-label">Событие
@@ -24,21 +24,28 @@
 				<div class="col-md-6 col-sm-6">
 				  <label class="control-label">Дата проведения
 				  </label>
-				  <input id="date" name="reviews[date]" type="date" class="wp-form-control wpcf7-text" placeholder="Дата проведения...">
+				  <input id="datetimepicker" name="reviews[date]" type="text" class="wp-form-control wpcf7-text" placeholder="Дата проведения...">
 				</div>
 				<div class="col-md-6 col-sm-6">
-					<div class="rateit bigstars"data-rateit-starwidth="32" data-rateit-starheight="32"></div>
+					<input class="rating" max="5" min="0" name="reviews[rate]" step="1" type="number">
 				</div>
 			  	<div class="col-md-12 col-sm-12">    
-			  		<textarea id="body" name="body" class="wp-form-control wpcf7-textarea" cols="30" rows="10" placeholder="Отзыв..."></textarea>
+			  		<textarea id="review_body" name="reviews[body]" class="wp-form-control wpcf7-textarea" cols="30" rows="10" placeholder="Отзыв..."></textarea>
 			  	</div>
-			  	<div class="col-md-12 col-sm-12"> 
-					<button class="review-button text-center wpcf7-submit button--itzel" type="submit">
+			  	<div class="col-md-12 col-sm-12">
+					<input type="file" id="add-photo" name="reviews[avatar]" class="hidden-input">
+					<p class="block-add-photo">
+						<span class="fa fa-camera"></span><label for="add-photo">Прикрепить</label> фото для аватарки
+						<em id="name_file"></em>
+					</p>
+				</div>
+			  	<div class="col-md-12 col-sm-6"> 
+					<button class="review-button-submit text-center wpcf7-submit button--itzel" type="submit">
 						<i class="button__icon fa fa-share"></i>
 						<span>Оставить отзыв</span>
 					</button>  
 				</div>
-			</form>
+			<%end%>
 		  </div>
 		</div>                    
 	  </div>

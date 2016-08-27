@@ -150,6 +150,7 @@ jQuery(function($){
 
 	$('.feedback-button').click(function(event){
 		$(this).closest('.appointment-form').find('input').removeClass('alert')
+		$(this).closest('.appointment-form').find('textarea').removeClass('alert')
 		var fio = $(this).closest('.appointment-form').find('#fio');
 		var email = $(this).closest('.appointment-form').find('#email')
 		var body = $(this).closest('.appointment-form').find('#body')
@@ -178,10 +179,58 @@ jQuery(function($){
 			$(this).closest(".modal-body").find(".appointment-msg").html("<div class='feedback-succsess col-md-12 col-sm-12'>Сообщение успешно отправлено!</div>")
 		}
 	});
-	$('.feedback-header a').click(function(event){
+	$('.feedback-header a, .review-button a').click(function(event){
 		$(".appointment-form").show();
+		$(".appointment-form").find('input').removeClass('alert')
+		$(".appointment-form").find('textarea').removeClass('alert')
 		$(".appointment-msg").hide();
 		document.getElementById("feedback").reset();
+		document.getElementById("new_reviews").reset();
+		$("#name_file").html('');
+		$("#new_reviews .rating").val(0);
+		$('.rating-input i').removeClass('glyphicon-star').addClass('glyphicon-star-empty')
+	});
+    $('#datetimepicker').datetimepicker({
+    	format: 'DD/MM/YYYY'
+    });
+	$('.review-button-submit').click(function(event){
+		$(this).closest('.appointment-form').find('input').removeClass('alert')
+		$(this).closest('.appointment-form').find('textarea').removeClass('alert')
+		var review_fio = $(this).closest('.appointment-form').find('#review_fio');
+		var review_date = $(this).closest('.appointment-form').find('#datetimepicker');
+		var review_body = $(this).closest('.appointment-form').find('#review_body');
+		if(review_fio.val() == ""){
+			review_fio.addClass("alert");
+		}
+		var valid_date = true;
+		if(review_date.val() != ""){
+			re = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+
+		    if(!review_date.val().match(re)) {
+		      review_date.addClass("alert");
+		      valid_date = false;
+		    }
+		}
+		if(review_body.val() == ""){
+			review_body.addClass("alert");
+		}
+		if(review_body.val() != "" && review_fio.val() != "" && valid_date != false){
+			$(this).closest(".appointment-form").hide();
+			$(this).closest(".modal-body").find(".appointment-msg").show();
+			$(this).closest(".modal-body").find(".appointment-msg").html("<div class='feedback-succsess col-md-12 col-sm-12'>Отзыв успешно создан!</div>")
+		} else {
+			return false;
+		}
+	});
+	$('#add-photo').change(function(){
+		$('#add-photo').each(function() {
+			var name = this.value;
+			reWin = /.*\\(.*)/;
+			var fileTitle = name.replace(reWin, "$1");
+			reUnix = /.*\/(.*)/;
+			fileTitle = fileTitle.replace(reUnix, "$1");
+			$('#name_file').html(fileTitle);
+		});	
 	});
 
 });

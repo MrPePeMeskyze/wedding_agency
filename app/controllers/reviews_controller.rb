@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-
+skip_before_filter :verify_authenticity_token, only: [:create]
 ##############################################################################
 	def index
 		@object = Objects.where('objects_type_id = 6').first
@@ -10,11 +10,13 @@ class ReviewsController < ApplicationController
 
 ##############################################################################
 	def create
+
+		      
 		@review = Reviews.new(reviews_params)
 		@review.session_id = @oSession.id
-	    if @review.save
-	      	head :no_content
-		end		
+		    if @review.save
+	    		head :no_content
+		    end
 	end
 	
 
@@ -23,7 +25,7 @@ class ReviewsController < ApplicationController
 	private
 	    def reviews_params
 	      params.require(:reviews)
-	      	.permit(:fio, :body, :event, :date)
+	      	.permit(:fio, :body, :event, :date, :rate, :avatar)
 	    end
 ##############################################################################
 	

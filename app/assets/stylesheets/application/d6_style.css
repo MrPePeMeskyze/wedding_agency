@@ -2926,6 +2926,13 @@ a.gallery-iteam:hover .image-effect::before {
 	margin-right: -50px;
 }
 @media(max-width:390px ){
+	.button--itzel {
+		width: 162px;
+    	font-size: 12px;
+	}
+	.button--itzel .button__icon{
+		font-size: 16px;
+	}
 	.whyChoose-left.service-slider{
 		height: 150px;
 	    width: 250px;
@@ -3079,4 +3086,43 @@ p{
 }
 .service-slider .slick-initialized .slick-slide{
 	position: relative;
+}
+.block-add-photo {
+    font-size: 17px;
+    line-height: 1.7;
+    position: initial;
+    text-align: center;
+    margin: 0px auto;
+    margin-bottom: 15px;
+}
+.block-add-photo label {
+    color: #694198;
+    text-decoration: underline;
+    cursor: pointer;
+    float: none;
+    font-size: 17px;
+    font-weight: 700;
+}
+.block-add-photo .fa{
+	color: #694198;
+	padding-right:10px;
+}
+.hidden-input{
+	display: none !important;
+}
+#name_file{
+	color: #694198;
+    font-size: 14px;
+}
+.rating-input .glyphicon{
+	color: #694198;
+	font-size: 30px;
+}
+.rating-input{
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+.modal-body .col-sm-6,
+.modal-body .col-md-12{
+	position: initial !important;
 }
