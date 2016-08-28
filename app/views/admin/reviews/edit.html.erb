@@ -1,0 +1,5 @@
+<% provide(:title, 'Редактирование отзыва') %>
+<h1>Редактирование отзыва </h1>
+<%= form_for @review, :url => { :action => :update }, html: { multipart: true } do |f| %>
+	<% render :partial =>'/admin/reviews/form', :locals => {:f => f} %>
+<% end %>

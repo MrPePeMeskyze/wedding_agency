@@ -10,7 +10,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   storage :file
   # storage :fog
   version :view_thumbnail do
-    process :resize_to_fill => [495, 495]
+    process :resize_to_fill => [120, 120]
   end
   
   # Override the directory where uploaded files will be stored.

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160816180400) do
+ActiveRecord::Schema.define(version: 20160817180400) do
 
   create_table "albums", force: true do |t|
     t.text     "name"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 20160816180400) do
     t.integer  "sort_order",      default: 1
     t.integer  "auser_id",        default: 0
     t.boolean  "is_video_review", default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "clients", force: true do |t|
+    t.integer  "sort_order"
+    t.boolean  "is_published", default: true
+    t.string   "image"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -89,24 +98,13 @@ ActiveRecord::Schema.define(version: 20160816180400) do
 
   create_table "reviews", force: true do |t|
     t.integer  "session_id"
-    t.boolean  "is_published", default: false
+    t.boolean  "is_published",            default: false
     t.string   "fio"
-    t.integer  "rate"
+    t.float    "rate",         limit: 24
     t.string   "event"
     t.string   "avatar"
     t.date     "date"
     t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "reviews", force: true do |t|
-    t.integer  "session_id"
-    t.boolean  "is_published", default: false
-    t.string   "fio"
-    t.integer  "rate"
-    t.text     "dignity"
-    t.text     "limitations"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,39 @@
+<tr <% if !review.is_published %> class="not_published" <% end %> > 
+	
+	<% if review.avatar %>
+		<th class="text-center" style="vertical-align:middle;">
+			<a class="fancybox" href="<%= review.avatar.url if review.avatar? %>">
+		    	<%= image_tag review.avatar.url(:view_thumbnail) %>
+		    </a>
+		</th>
+	<% else %>
+		<th></th>
+	<% end %>
+
+	<th class="text-center">
+		<%= review.fio %>
+	</th>
+	<th class="text-center">
+		<%= review.event %>
+	</th>
+	<th class="text-center">
+		<%= review.date %>
+	</th>
+	<th class="text-center">
+		<% if !review.rate.blank? %>
+			<div class="rating-input">
+				<% (1..review.rate.round).each do |i| %>
+					<i class="glyphicon glyphicon-star"></i>
+				<% end %>
+			</div>
+		<% end %>
+	</th>
+	<th class="text-center">
+		<%= review.body %>
+	</th>
+
+
+	<th style="width:100px">
+		<%= link_to 'Редактировать', edit_admin_review_path(review.id), :class => 'text-success' %>
+	</th>
+</tr> 

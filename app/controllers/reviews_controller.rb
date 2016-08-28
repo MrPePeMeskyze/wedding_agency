@@ -4,7 +4,7 @@ skip_before_filter :verify_authenticity_token, only: [:create]
 ##############################################################################
 	def index
 		@object = Objects.where('objects_type_id = 6').first
-		@reviews = Reviews.where('is_published = 1').order('created_at ASC')
+		@reviews = Reviews.where('is_published = ? or session_id = ?', true, @oSession.id).order('created_at DESC').paginate(page: params[:page], per_page: 10)
 	end
 
 

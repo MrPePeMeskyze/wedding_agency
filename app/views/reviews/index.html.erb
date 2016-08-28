@@ -16,40 +16,40 @@
   </div>      
 </section>
 
-<div class="row">
-  <div class="col-lg-12 col-md-12">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 col-sm-12">
-          <div class="blogArchive-area">
-            <div class="row">
-              <div class="col-md-12 col-sm-12">  
-                <div class="blog-content">
-                  <div class="single-Blog">
-                    <div class="single-blog-left">
-                      <div class="review-button readmore_area">
-                        <a data-toggle="modal" data-target="#review_modal" data-hover="Добавить отзыв"><span>Добавить отзыв</span></a>  
-                      </div>
-                    </div>
-                    <div class="single-blog-right"> 
-          						<div class="col-lg-6 col-md-6"> 
-          							<div class="reviews-content-item">
-          								<div class="reviews-person-img">
-          									<div class="person-img" style="background-image: url('/static/img/reviews/фафурина.jpg')"></div>
-          								</div>
-          								<h4>Даша Фафурина</h4>
-          								<p>Дима! Спасибо большое за прекрасный праздник, который у нас получился во многом благодаря тебе! За 2 года видела 3 абсолютно разных свадьбы (включая собственную:), проведенных весело, интересно и без повторов (!) программы. Надеюсь, что увижу еще, потому что спрос на визитки среди неженатых гостей был высокий)</p>
-          							</div>
-          						</div> 
-                    </div>
-                  </div>
-                </div>                     
+<div class="col-md-12 col-sm-12">
+  <div class="blogArchive-area">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">  
+        <div class="blog-content block-margin">
+          <div class="single-Blog">
+            <div class="col-md-2 col-sm-2">
+              <div class="review-button readmore_area">
+                <a data-toggle="modal" data-target="#review_modal" data-hover="Добавить отзыв"><span>Добавить отзыв</span></a>  
               </div>
-            </div>                   
+            </div>
+             <div class="col-md-10 col-sm-10">
+              <div class="video-reviews-button readmore_area">
+                <a href="/videos/" data-hover="Видео отзывы"><span>Видео отзывы</span></a>  
+              </div> 
+              <div class="service-area">
+                <div class="section-heading">
+                  <h1><%= @object.header %></h1>
+                  <div class="line"></div>            
+                </div>              
+              </div>
+              <div class="row">
+    						<%= render partial: "reviews/review", collection: @reviews, :as => :review %>
+                <div class="blog-pagination">
+                  <nav>
+                    <%= will_paginate(:previous_label => "<span class='fa fa-angle-left'></span>",:next_label => "<span class='fa fa-angle-right'></span>") %>    
+                  </nav>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        </div>                     
       </div>
-    </div>
+    </div>                   
   </div>
 </div>
 

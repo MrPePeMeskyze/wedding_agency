@@ -1,0 +1,24 @@
+<% provide(:title, 'Отзывы') %>
+<% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+<h1>Отзывы</h1>
+<table class="table"> 
+	<thead> 
+		<tr> 
+			<th class="text-center">Аватарка</th> 
+			<th class="text-center">ФИО</th>
+			<th class="text-center">Мероприятие</th>
+			<th class="text-center">Дата проведения</th>
+			<th class="text-center">Рейтинг</th>
+			<th class="text-center">Отзыв</th>
+			<th></th>
+		</tr> 
+	</thead> 
+	<tbody> 
+		<%= render partial: "review", collection: @reviews, :as => :review %>
+	</tbody>
+</table>
+
+<% content_for :right do %>
+<% end %>

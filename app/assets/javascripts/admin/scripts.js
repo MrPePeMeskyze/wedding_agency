@@ -1,4 +1,7 @@
 $(document).ready(function() {
-  $('.fancybox').fancybox();
+	$('.fancybox').fancybox();
+	$('.datetimepicker').datetimepicker({
+		format: 'DD/MM/YYYY'
+	})
 });
   
