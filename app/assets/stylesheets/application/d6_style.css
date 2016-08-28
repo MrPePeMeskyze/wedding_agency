@@ -361,7 +361,7 @@ img{
 .top-slide-inner{
 	float: left;
 	display: inline;
-	height: 600px;
+	height: auto;
 	width: 100%;
 
 }
@@ -2363,7 +2363,8 @@ width: 100%;
 }
 .my-simple-gallery figure a {
   display: block;
-  height: 240px;
+  height:auto;
+  max-height: 240px;
   width: 100%;
 }
 .my-simple-gallery figcaption {
@@ -2814,7 +2815,6 @@ a.gallery-iteam:hover .image-effect::before {
 .navbar-default .navbar-toggle .icon-bar {background-color: #fff;}
 .navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{background-color: transparent;}
 .navbar-default .navbar-brand {margin-bottom: 10px;margin-top: 0;}
-#sliderArea {margin-top: 70px;}
 .navbar-right .dropdown-menu{ left: 0px; top: 47px;}
 .navbar-right .dropdown-menu::before {display: none;}
 .whychoose-singleslide img {width: 100%;}
@@ -2835,7 +2835,7 @@ a.gallery-iteam:hover .image-effect::before {
 .nav-tabs > li > a {font-size: 15px;padding: 10px 15px;}
 .contact-address {margin-top: 40px;}
 .navbar-collapse.collapse {text-align:left;}
-.top-slide-inner {height: 400px;}
+.top-slide-inner {height: auto}
 .slider-text {padding: 10px 5px;top: 10%;}
 .slider-text h2 {font-size: 35px;line-height: 40px;}
 .slider-text p {font-size: 20px;}
@@ -2851,7 +2851,69 @@ a.gallery-iteam:hover .image-effect::before {
 .slider-text h2 {font-size: 30px;line-height: 34px;}
 .slider-text p {font-size: 18px;}
 }
+@media(max-width:500px ){
+	.gallery-area .col-xs-6{
+		width:100%;
+	}
+	.my-simple-gallery figure a{
+		max-height: none;
+	}
+	.my-simple-gallery figcaption{
+	    width: 93%;
+	}
+}
 
+@media(max-width:768px ){
+	.my-simple-gallery figcaption{
+	    width: 92%;
+	}
+}
+@media(max-width:700px ){
+	.my-simple-gallery figcaption{
+	    width: 91%;
+	}
+}
+@media(max-width:620px ){
+	.my-simple-gallery figcaption{
+	    width: 90%;
+	}
+}
+@media(max-width:570px ){
+	.my-simple-gallery figcaption{
+	    width: 89%;
+	}
+}
+@media(max-width:520px ){
+	.my-simple-gallery figcaption{
+	    width: 88%;
+	}
+}
+@media(max-width:500px ){
+	.my-simple-gallery figcaption{
+	    width: 94%;
+	}
+}
+@media(max-width:420px ){
+	.my-simple-gallery figcaption{
+	    width: 92%;
+	}
+}
+@media(max-width:380px ){
+	.my-simple-gallery figcaption{
+	    width: 91%;
+	}
+}
+@media(max-width:340px ){
+	.my-simple-gallery figcaption{
+	    width: 90%;
+	}
+}
+@media(max-width:300px ){
+	.my-simple-gallery figcaption{
+	    width: 89%;
+	}
+}
+}
 
 @media(max-width:360px ){
 .navbar-brand {float: left;font-size: 16px;width: 250px;}
