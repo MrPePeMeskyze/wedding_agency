@@ -1,0 +1,22 @@
+<% provide(:title, 'Клиенты') %>
+<% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+<h1>Клиенты</h1>
+<table class="table"> 
+	<thead> 
+		<tr style="vertical-align:middle;"> 
+			<th></th> 
+			<th>Название</th> 
+			<th class="text-center">Фото</th>
+			<th></th>
+		</tr> 
+	</thead> 
+	<tbody> 
+		<%= render partial: "client", collection: @clients, :as => :client %>
+	</tbody>
+</table>
+
+<% content_for :right do %>
+	<%= link_to raw("<span class='glyphicon glyphicon-plus-sign'></span>Добавить"), {:controller => "clients", :action => "new"}, class: "btn btn-success" %>
+<% end %>

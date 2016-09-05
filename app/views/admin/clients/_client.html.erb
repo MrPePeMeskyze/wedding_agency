@@ -1,0 +1,18 @@
+<tr <% if !client.is_published %> class="not_published" <% end %> > 
+	<th style="width:100px; vertical-align:middle;">
+		<%= link_to "Удалить", { action: "destroy", id: client.id },
+            method: :delete, data: { confirm: 'Вы уверены?' },
+            :class => 'text-danger'  %>
+	</th>
+	<th style="vertical-align:middle;">
+		<%= client.name %>
+	</th>
+	<th class="text-center" style="vertical-align:middle;">
+		<a class="fancybox" href="<%= client.image.url if client.image? %>">
+	    	<%= image_tag client.image.url(:view_thumbnail) %>
+	    </a>
+	</th>
+	<th style="width:100px; vertical-align:middle;">
+		<%= link_to 'Редактировать', edit_admin_client_path(client.id), :class => 'text-success' %>
+	</th>
+</tr> 
