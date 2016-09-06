@@ -8,6 +8,7 @@ class PagesController < ApplicationController
 		@videos = Videos.where("is_published = ?", 1).order("sort_order ASC, name").limit(6)
 		@photos = Photos.where("is_published = ?", 1).order("sort_order ASC, name").limit(8)
 		@slides = Slides.where("is_published = ?", 1).order("sort_order ASC, name")
+		@clients = Clients.where("is_published = ?", 1).order("sort_order ASC, name")
 	end
 
 

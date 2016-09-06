@@ -64,7 +64,7 @@ class Admin::AlbumsController < Admin::AdminController
 	private
 	    def albums_params
 	      params.require(:albums)
-	      	.permit(:is_photo, :is_video, :is_published, :name, :sort_order, :is_video_review)
+	      	.permit(:is_photo, :image, :is_video, :permalink, :is_published, :name, :sort_order, :is_video_review)
 	    end
 ##############################################################################
 end

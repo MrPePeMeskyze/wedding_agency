@@ -1,0 +1,39 @@
+<% @title = @album.name.to_s %>
+<section id="blogArchive">      
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <div class="blog-breadcrumbs-area">
+        <div class="container">
+          <div class="blog-breadcrumbs-left">
+            <ol class="breadcrumb">
+              <li><a href="/">Главная</a></li> 
+              <li><%= link_to_object @photo.header, @photo %></li>                 
+              <li class="active"><%= @album.name %></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>        
+  </div>      
+</section>
+
+<section id="gallery_main" class="gallery_photo_video">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="gallery-area">
+            <div class="my-simple-gallery" data-pswp-uid="<%= @album.id %>">
+              <div class="section-heading">
+                <h1><%= @album.name %></h1>
+                <div class="line"></div>
+              </div>
+              <div class="row">
+                <%= render partial: "photos/photo", collection: @album.photos, :as => :photo %>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<%= render partial: "photos/gallery" %> 

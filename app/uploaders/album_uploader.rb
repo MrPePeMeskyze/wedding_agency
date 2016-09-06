@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class ClientUploader < CarrierWave::Uploader::Base
+class AlbumUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   # Include RMagick or MiniMagick support:
   #include CarrierWave::RMagick
@@ -10,7 +10,10 @@ class ClientUploader < CarrierWave::Uploader::Base
   storage :file
   # storage :fog
   version :view_thumbnail do
-    process :resize_to_fill => [195, 134]
+    process :resize_to_fill => [400, 400]
+  end
+  version :thumb do
+    process :resize_to_fill => [150, 115]
   end
   
   # Override the directory where uploaded files will be stored.

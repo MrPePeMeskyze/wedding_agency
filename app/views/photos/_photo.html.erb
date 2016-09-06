@@ -2,7 +2,7 @@
   <a class="gallery-iteam" href="<%=photo.image.url%>" itemprop="contentUrl" data-size="1600x1600">
 
     <%= image_tag(photo.image.url(:view_thumbnail), itemprop:"thumbnail", :alt => photo.name) %>
-     <span class="image-effect"></span>
-  </a>                    
-  <figcaption itemprop="caption description"><%= photo.name %></figcaption>         
+    <span class="image-effect"></span>
+    <figcaption itemprop="caption description"><%= photo.name %></figcaption>
+  </a>                         
 </figure>

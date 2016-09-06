@@ -21,7 +21,11 @@
 			<span class="glyphicon glyphicon-remove"></span>
 		<% end %>
 	</th>
-
+	<th class="text-center" style="vertical-align:middle;">
+		<a class="fancybox" href="<%= album.image.url if album.image? %>">
+	    	<%= image_tag album.image.url(:thumb) %>
+	    </a>
+	</th>
 	<th style="width:100px">
 		<%= link_to 'Редактировать', edit_admin_album_path(album.id), :class => 'text-success' %>
 	</th>

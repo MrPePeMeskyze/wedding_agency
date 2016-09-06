@@ -10,12 +10,30 @@
 </div>
 
 <div class="row">
+	<div class="col-xs-8">
+		<div class="form-group">
+			<%= f.label :permalink, raw("<div class='required'>&#10039;</div>Путь") %>
+			<%= f.text_field :permalink, class: "form-control" %>
+		</div>
+	</div>
+</div>
+
+<div class="row">
 	<div class="col-xs-2">
 		<div class="form-group">
 			<%= f.label :sort_order, "Позиция" %>
 			<%= f.text_field :sort_order, class: "form-control" %>
 		</div>
 	</div>
+</div>
+
+<a class="fancybox" href="<%= @album.image.url if @album.image? %>">
+	<%= image_tag(@album.image.thumb.url) if @album.image? %>
+</a>
+<div class="form-group">
+	<%= f.label :image, raw("<div class='required'>&#10039;</div>Изображение") %>
+	<%= f.file_field :image %>
+	<%= f.hidden_field :image_cache %>
 </div>
 
 <div class="checkbox">

@@ -43,13 +43,15 @@ Rails.application.routes.draw do
 		resources :clients
 	end
 
-	resources :photos
-
 	resources :videos
 
 	resources :reviews
 
 	get '/services/:id', to: 'services#view', as: 'service'
+
+	get '/photos/:id', to: 'photos#view', as: 'photo'
+
+	get '/photos', to: 'photos#index'
 
 	post'sendmail' , to: 'pages#sendmail', defaults: { format: 'json' }
 	

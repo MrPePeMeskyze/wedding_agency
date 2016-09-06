@@ -2349,25 +2349,30 @@ width: 100%;
 	display: inline;
 	width: 100%;
 }
-.my-simple-gallery {
+.my-simple-gallery,
+.albums-list {
   float: left;
   margin-bottom: 20px;
   width: 100%;
 }
-.my-simple-gallery img {
+.my-simple-gallery img,
+.albums-list img {
   height: 100%;
   width: 100%;
 }
-.my-simple-gallery figure {
+.my-simple-gallery figure,
+.albums-list figure {
   margin-bottom: 30px;
 }
-.my-simple-gallery figure a {
+.my-simple-gallery figure a,
+.albums-list figure a {
   display: block;
   height:auto;
   max-height: 240px;
   width: 100%;
 }
-.my-simple-gallery figcaption {
+.my-simple-gallery figcaption,
+.albums-list figcaption {
   display: none;
 }
 a.gallery-iteam img {
@@ -2398,7 +2403,9 @@ a.gallery-iteam:hover img {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1)
 }
-.my-simple-gallery a {
+.my-simple-gallery a,
+.client-block a,
+.albums-list a{
   cursor: pointer;
   float: left;
   height: auto;
@@ -2406,7 +2413,12 @@ a.gallery-iteam:hover img {
   position: relative;
   text-align: center;
 }
-.my-simple-gallery a img {
+
+.client-block:hover .image-effect::before{
+	top: 10px !important;
+}
+.my-simple-gallery a img,
+.albums-list a img {
 	position: relative;
 	display: block;
 	min-height: 100%;
@@ -2430,6 +2442,9 @@ a.gallery-iteam .image-effect::before {
 	transition: transform 0.6s ease 0s;
 	width: 100%
 }
+.client-block .image-effect::before{
+	top: -10px !important;
+}
 a.gallery-iteam:hover .image-effect::before {
 	-moz-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
     -ms-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
@@ -2437,19 +2452,19 @@ a.gallery-iteam:hover .image-effect::before {
     -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
     transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0)
 }
-.my-simple-gallery figcaption {
+.my-simple-gallery figcaption,
+.albums-list figcaption {
   bottom: 0;
   color: #fff;
   display: block;
   font-size: 18px;
   font-weight: bold;
-  left: 15px;
   background-color: rgba(0, 0, 0, 0.3);
   margin-top: -23px;
   padding-bottom: 10px;
   position: absolute;
   text-align: center;
-  width: 90%;
+  width: 100%;
 }
 .pswp__caption__center {
   font-size: 25px;
@@ -2769,7 +2784,6 @@ a.gallery-iteam:hover .image-effect::before {
 @media(max-width:1199px ){
   .navbar-default .navbar-nav > li > a {padding: 18px 6px;font-size: 13px;}
   .navbar-brand {font-size: 18px;width: 258px;}
-  .my-simple-gallery figcaption{ width: 88%;}
   .doctors-nav figcaption h2 {font-size: 14px;}
   .doctors-nav figcaption p {font-size: 14px;padding: 0 12px;}
   .nav-tabs > li > a {padding: 10px 10px;}
@@ -2852,67 +2866,14 @@ a.gallery-iteam:hover .image-effect::before {
 .slider-text p {font-size: 18px;}
 }
 @media(max-width:500px ){
-	.gallery-area .col-xs-6{
+	.gallery-area .col-xs-6,
+	.albums-list .col-xs-6{
 		width:100%;
 	}
-	.my-simple-gallery figure a{
+	.my-simple-gallery figure a,
+	.albums-list figure a{
 		max-height: none;
 	}
-	.my-simple-gallery figcaption{
-	    width: 93%;
-	}
-}
-
-@media(max-width:768px ){
-	.my-simple-gallery figcaption{
-	    width: 92%;
-	}
-}
-@media(max-width:700px ){
-	.my-simple-gallery figcaption{
-	    width: 91%;
-	}
-}
-@media(max-width:620px ){
-	.my-simple-gallery figcaption{
-	    width: 90%;
-	}
-}
-@media(max-width:570px ){
-	.my-simple-gallery figcaption{
-	    width: 89%;
-	}
-}
-@media(max-width:520px ){
-	.my-simple-gallery figcaption{
-	    width: 88%;
-	}
-}
-@media(max-width:500px ){
-	.my-simple-gallery figcaption{
-	    width: 94%;
-	}
-}
-@media(max-width:420px ){
-	.my-simple-gallery figcaption{
-	    width: 92%;
-	}
-}
-@media(max-width:380px ){
-	.my-simple-gallery figcaption{
-	    width: 91%;
-	}
-}
-@media(max-width:340px ){
-	.my-simple-gallery figcaption{
-	    width: 90%;
-	}
-}
-@media(max-width:300px ){
-	.my-simple-gallery figcaption{
-	    width: 89%;
-	}
-}
 }
 
 @media(max-width:360px ){
@@ -3254,4 +3215,24 @@ p{
 	cursor: pointer;
 	margin: 0 auto -15px auto !important;
     text-align: center;
+}
+.clients-image {
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+.clients-image:hover {
+    margin: 0px;
+    border-radius: 0px;
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
 }

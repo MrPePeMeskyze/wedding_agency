@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160817180400) do
+ActiveRecord::Schema.define(version: 20160901120400) do
 
   create_table "albums", force: true do |t|
     t.text     "name"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20160817180400) do
     t.boolean  "is_video_review", default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
+    t.string   "permalink"
   end
 
   create_table "clients", force: true do |t|
