@@ -1,6 +1,6 @@
 <% @title = @album.name.to_s %>
-<% @description = @photo.meta_description.to_s %>
-<% @keywords = @photo.meta_keywords.to_s %>
+<% @description = @video.meta_description.to_s %>
+<% @keywords = @video.meta_keywords.to_s %>
 
 <section id="blogArchive">      
   <div class="row">
@@ -10,7 +10,7 @@
           <div class="blog-breadcrumbs-left">
             <ol class="breadcrumb">
               <li><a href="/">Главная</a></li> 
-              <li><%= link_to_object @photo.header, @photo %></li>                 
+              <li><%= link_to_object @video.header, @video %></li>                 
               <li class="active"><%= @album.name %></li>
             </ol>
           </div>
@@ -31,7 +31,7 @@
                 <div class="line"></div>
               </div>
               <div class="row">
-                <%= render partial: "photos/photo", collection: @album.photos, :as => :photo %>
+                <%= render partial: "videos/video", collection: @album.videos, :as => :video %>
               </div>
             </div>
         </div>
@@ -39,4 +39,3 @@
     </div>
   </div>
 </section>
-<%= render partial: "photos/gallery" %> 

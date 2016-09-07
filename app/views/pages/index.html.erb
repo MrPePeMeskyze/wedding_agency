@@ -1,4 +1,6 @@
 <% @title = @object.title.to_s %>
+<% @description = @object.meta_description.to_s %>
+<% @keywords = @object.meta_keywords.to_s %>
 
 <%= render partial: "layouts/slider" %> 
 

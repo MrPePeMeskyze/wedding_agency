@@ -1,4 +1,7 @@
 <% @title = @object.title.to_s %>
+<% @description = @object.meta_description.to_s %>
+<% @keywords = @object.meta_keywords.to_s %>
+
 <section id="blogArchive">      
   <div class="row">
     <div class="col-lg-12 col-md-12">
@@ -18,22 +21,20 @@
 
 <section id="gallery_main" class="gallery_photo_video">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12">
-        <div class="gallery-area">
-          <% @albums.each do |album| %>
-            <div class="my-simple-gallery" data-pswp-uid="<%= album.id %>">
-              <div class="section-heading">
-                <h2><%= album.name %></h2>
-                <div class="line"></div>
-              </div>
-              <div class="row">
-                <%= render partial: "videos/video", collection: album.videos, :as => :video %>
-              </div>
-            </div>
-          <% end %>
+    <div class="col-lg-12 col-md-12">
+      <div class="service-area">
+        <div class="section-heading">
+          <h1><%= @object.header %></h1>
+          <div class="line"></div>            
+        </div>              
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12">
+      <div class="albums-list">
+        <div class="row">
+          <%= render partial: "videos/album", collection: @albums, :as => :album %>
         </div>
       </div>
     </div>
   </div>
-</section>
+</section> 

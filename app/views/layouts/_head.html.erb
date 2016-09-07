@@ -1,6 +1,11 @@
-
 <head>
 	<title><%= full_title(@title) %></title>
+	<% if !@description.blank? %>
+		<meta name="description" content="<%= @description %>">
+	<% end %>
+	<% if !@keywords.blank? %>
+		<meta name="keywords" content="<%= @keywords %>">
+	<% end %>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	

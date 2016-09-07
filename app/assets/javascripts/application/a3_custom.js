@@ -217,7 +217,7 @@ jQuery(function($){
 		if(review_body.val() != "" && review_fio.val() != "" && valid_date != false){
 			$(this).closest(".appointment-form").hide();
 			$(this).closest(".modal-body").find(".appointment-msg").show();
-			$(this).closest(".modal-body").find(".appointment-msg").html("<div class='feedback-succsess col-md-12 col-sm-12'>Отзыв успешно создан!</div>")
+			$(this).closest(".modal-body").find(".appointment-msg").html("<div class='feedback-succsess col-md-12 col-sm-12'>Отзыв успешно создан!<br/> Он появится на странице после ее перезагрузки!</div>")
 		} else {
 			return false;
 		}

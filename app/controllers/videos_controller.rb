@@ -6,4 +6,9 @@ class VideosController < ApplicationController
 		@albums = Albums.where('is_published = 1 and is_video = 1').order('sort_order ASC')
 	end
 	
+	def view
+		@video = Objects.where('objects_type_id = 5').first
+		@album = Albums.find_by(permalink: params[:id], is_published: 1)
+	end
+	
 end
