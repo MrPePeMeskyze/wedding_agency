@@ -25,15 +25,20 @@
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="gallery-area">
-            <div class="my-simple-gallery" data-pswp-uid="<%= @album.id %>">
-              <div class="section-heading">
-                <h1><%= @album.name %></h1>
-                <div class="line"></div>
-              </div>
-              <div class="row">
-                <%= render partial: "videos/video", collection: @album.videos, :as => :video %>
-              </div>
+          <div class="my-simple-gallery" data-pswp-uid="<%= @album.id %>">
+            <div class="section-heading">
+              <h1><%= @album.name %></h1>
+              <div class="line"></div>
             </div>
+            <div class="row">
+              <%= render partial: "videos/video", collection: @videos, :as => :video %>
+            </div>
+          </div>
+        </div>
+        <div class="blog-pagination">
+          <nav>
+            <%= will_paginate(:previous_label => "<span class='fa fa-angle-left'></span>",:next_label => "<span class='fa fa-angle-right'></span>") %>    
+          </nav>
         </div>
       </div>
     </div>

@@ -9,6 +9,7 @@ class PhotosController < ApplicationController
 	def view
 		@photo = Objects.where('objects_type_id = 4').first
 		@album = Albums.find_by(permalink: params[:id], is_published: 1)
+		@photos = @album.photos.where('is_published = 1').order('sort_order ASC').paginate(page: params[:page], per_page: 20)
 	end
 	
 end
