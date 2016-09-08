@@ -72,6 +72,61 @@ jQuery(function($){
       autoplaySpeed: 5000,
       cssEase: 'linear'
 	});
+	
+	/* ----------------------------------------------------------- */
+	/*  4.1 Service-Slider(Slick Slider)
+	/* ----------------------------------------------------------- */ 
+
+	$('.services-slider').slick({
+	  centerMode: true,
+	  infinite: true,
+	  autoplay: true,
+	  centerPadding: '60px',
+	  fade: false,
+      autoplaySpeed: 5000,
+      cssEase: 'linear',
+	  lazyLoad: 'ondemand',
+	  slide: 'div',
+	  speed: 800,
+      arrows:true, 
+	  slidesToShow: 3,
+	  responsive: [
+		{
+		  breakpoint: 750,
+		  settings: {
+			  centerMode: true,
+			  infinite: true,
+			  autoplay: true,
+			  centerPadding: '60px',
+			  fade: false,
+			  autoplaySpeed: 5000,
+			  cssEase: 'linear',
+			  lazyLoad: 'ondemand',
+			  slide: 'div',
+			  speed: 800,
+			  arrows:true, 
+			  slidesToShow: 2
+		  }
+		},
+		{
+		  breakpoint: 500,
+		  settings: {
+			  centerMode: true,
+			  infinite: true,
+			  autoplay: true,
+			  centerPadding: '60px',
+			  fade: false,
+			  autoplaySpeed: 5000,
+			  lazyLoad: 'ondemand',
+			  cssEase: 'linear',
+			  slide: 'div',
+			  speed: 800,
+			  arrows:false, 
+			  slidesToShow: 1
+		  }
+		}
+	  ]
+	});
 
 	/* ----------------------------------------------------------- */
 	/*  5. Counter
