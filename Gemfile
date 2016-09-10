@@ -62,5 +62,6 @@ gem 'capistrano', '~> 2.15.5'
 gem 'remotipart', '~> 1.2'
 
 
-gem 'unicorn'
-
+group :production do # linux
+  gem 'unicorn'
+end
