@@ -170,6 +170,7 @@ DEPENDENCIES
   rails (= 4.1.8)
   rails_12factor
   rails_serve_static_assets
+  rake (= 11.2.2)
   remotipart (~> 1.2)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
