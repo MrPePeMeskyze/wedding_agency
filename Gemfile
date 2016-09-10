@@ -64,4 +64,5 @@ gem 'remotipart', '~> 1.2'
 
 group :production do # linux
   gem 'unicorn'
+  gem "unicorn-rails"
 end
