@@ -57,6 +57,15 @@ Rails.application.routes.draw do
 
 	post'sendmail' , to: 'pages#sendmail', defaults: { format: 'json' }
 	
+	## Выборка пермалинков для статических страниц
+	@__static = Objects.where("objects_type_id = ?", ENV['STATIC_PAGES_ID'])
+    @__static = (@__static.map do |_static| "#{_static.permalink}" end).join('|')
+    	
+	root :to => "pages#index"
+
+	## Роутинг по статическим страницам
+		## TODO: если в статической странице вложен раздел с другим типов, переадресует на pages, не должен учитывать такое 
+	match ':id', via: :get, :controller => 'pages', :action => 'pages',  :constraints => {:id => /.*(#{@__static})/}
 
 	get ':controller(/:action(/:id))'
 
