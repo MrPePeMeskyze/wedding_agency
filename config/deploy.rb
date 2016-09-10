@@ -95,6 +95,7 @@ end
 
   set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use #{rvm_ruby_string} do bundle exec unicorn_rails -Dc #{unicorn_conf})"
 
+set :rake, 'bundle exec rake'
 
 # - for unicorn - #
 namespace :deploy do
