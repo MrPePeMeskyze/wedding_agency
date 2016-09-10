@@ -166,6 +166,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mini_magick
+  multi_json (= 1.12.1)
   mysql2 (~> 0.3.11)
   rails (= 4.1.8)
   rails_12factor
