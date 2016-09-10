@@ -61,6 +61,6 @@ gem 'capistrano', '~> 2.15.5'
 
 gem 'remotipart', '~> 1.2'
 
-platforms :ruby do # linux
-	gem 'unicorn'
-end
+
+gem 'unicorn'
+
