@@ -43,7 +43,7 @@ load 'deploy/assets'
 # Если вы не используете авторизацию SSH по ключам И ssh-agent,
 # закомментируйте эту опцию.
 ssh_options[:forward_agent] = true
-
+forward_agent = true
 # Имя вашего проекта в панели управления.
 # Не меняйте это значение без необходимости, оно используется дальше.
 set :application,     "irinaevent"
@@ -114,5 +114,5 @@ namespace :deploy do
   end
 
   set :shared_children, %w(public/uploads public/images log)
-  set :ssh_options, { :forward_agent => false }
+
 end
