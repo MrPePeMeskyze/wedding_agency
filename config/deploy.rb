@@ -84,6 +84,7 @@ set :scm,             :git
 
 ## Если ваш репозиторий в GitHub, используйте такую конфигурацию
  set :repository,    "git@github.com:MrPePeMeskyze/wedding_agency.git"
+ set :default_run_options, {:pty => true}
 
 ## --- Ниже этого места ничего менять скорее всего не нужно ---
 
