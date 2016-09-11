@@ -26,11 +26,11 @@
 /*--------------------*/
 @font-face {
   font-family: 'Andantinoscript';
-  src: asset-url('Andantinoscript.woff') format('woff'),
-       asset-url('Andantinoscript.svg#Andantinoscript') format('svg'),
-	   asset-url('Andantinoscript.eot'),
-       asset-url('Andantinoscript.woff2') format('woff2'),
-       asset-url('Andantinoscript.eot?#iefix') format('embedded-opentype');
+  src: font-url('Andantinoscript.woff') format('woff'),
+       font-url('Andantinoscript.svg#Andantinoscript') format('svg'),
+	   font-url('Andantinoscript.eot'),
+       font-url('Andantinoscript.woff2') format('woff2'),
+       font-url('Andantinoscript.eot?#iefix') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -38,11 +38,11 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:  asset-url('icomoon.eot?os804e');
-  src:  asset-url('icomoon.eot?os804e#iefix') format('embedded-opentype'),
-    asset-url('icomoon.ttf?os804e') format('truetype'),
-    asset-url('icomoon.woff?os804e') format('woff'),
-    asset-url('icomoon.svg?os804e#icomoon') format('svg');
+  src:  font-url('icomoon.eot?os804e');
+  src:  font-url('icomoon.eot?os804e#iefix') format('embedded-opentype'),
+    font-url('icomoon.ttf?os804e') format('truetype'),
+    font-url('icomoon.woff?os804e') format('woff'),
+    font-url('icomoon.svg?os804e#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
