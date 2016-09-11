@@ -69,6 +69,6 @@ Rails.application.routes.draw do
 
 	get ':controller(/:action(/:id))'
 
-	get '*not_found', to: 'application#not_found'
+	
 	
 end
