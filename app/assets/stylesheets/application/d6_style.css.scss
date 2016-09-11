@@ -175,7 +175,7 @@ img{
   position:absolute;
   left:50%; /* centers the loading animation horizontally one the screen */
   top:50%; /* centers the loading animation vertically one the screen */
-  background-image:url(image_path('ajax-loader.gif')); /* path to your loading animation */
+  background-image:url(image_path('status.gif')); /* path to your loading animation */
   background-repeat:no-repeat;
   background-position:center;
   margin:-100px 0 0 -100px; /* is width and height divided by two */
@@ -2872,7 +2872,7 @@ a.gallery-iteam:hover .image-effect::before {
 }
 .navbar-header .navbar-brand{ margin-left: 25px !important;}
 .contact-info{margin-top: 10px !important;}
-.feedback-header a{margin-top: 10px !important; margin-left: -20px !important;}
+.feedback-header a{margin-top: 15px !important; margin-bottom: 15px !important; margin-left: -40px !important;}
 .navbar>.container .navbar-brand{margin-top: -20px;}
 .container #navbar,.feedback-block,.navbar-header .contact-info{margin:0px !important;}
 .navbar-default .navbar-toggle {border-color: #fff;margin-top: 12px;}
