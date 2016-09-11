@@ -239,11 +239,13 @@ jQuery(function($){
 		$(".appointment-form").find('input').removeClass('alert')
 		$(".appointment-form").find('textarea').removeClass('alert')
 		$(".appointment-msg").hide();
-		document.getElementById("feedback").reset();
-		document.getElementById("new_reviews").reset();
+		document.getElementById('feedback').reset()
 		$("#name_file").html('');
 		$("#new_reviews .rating").val(0);
 		$('.rating-input i').removeClass('glyphicon-star').addClass('glyphicon-star-empty')
+	});
+	$('.review-button a').click(function(event){
+		document.getElementById('new_reviews').reset()
 	});
     $('#datetimepicker').datetimepicker({
     	format: 'DD/MM/YYYY'

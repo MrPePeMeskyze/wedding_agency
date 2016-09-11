@@ -175,7 +175,7 @@ img{
   position:absolute;
   left:50%; /* centers the loading animation horizontally one the screen */
   top:50%; /* centers the loading animation vertically one the screen */
-  background-image:url(../status.gif); /* path to your loading animation */
+  background-image:url(image_path('ajax-loader.gif')); /* path to your loading animation */
   background-repeat:no-repeat;
   background-position:center;
   margin:-100px 0 0 -100px; /* is width and height divided by two */
@@ -346,6 +346,7 @@ img{
 	margin-top: 0px;
 	font-weight: bold;
 	width: 250px;
+	white-space: nowrap;
 	line-height: 31px;
 }
 .navbar-brand img{
@@ -871,14 +872,14 @@ img{
 }
 .whychoose-slider .slick-next,
 .services-slider .slick-next{
-  background-image: url("../next_icon1.png");
+  background-image: url(image_path('next_icon1.png'));
   background-position: center center;
   background-repeat: no-repeat; 
   right: 0;
 }
 .whychoose-slider .slick-prev,
 .services-slider .slick-prev{
-  background-image: url("../prev_icon.png");
+  background-image: url(image_path("prev_icon.png"));
   background-position: center center;
   background-repeat: no-repeat;    
   left: 0;
@@ -929,7 +930,7 @@ img{
 /*--------------------*/
 
 #counterSection {
-	background-image: url(../counter-bg2.jpg);
+	background-image: url(image_path('counter-bg2.jpg'));
 	background-repeat: no-repeat;
 	background-position: 100%;
 	background-color: #222;
@@ -1233,14 +1234,14 @@ img{
 	width: 40px
 }
 .doctors-nav .slick-next {
-  background-image: url("../team-next-icon.png");
+  background-image: url(image_path("team-next-icon.png"));
   background-position: center center;
   background-repeat: no-repeat; 
   color: #fff;
   right: -50px;
 }
 .doctors-nav .slick-prev {
-  background-image: url("../team-prev-icon.png");
+  background-image: url(image_path("team-prev-icon.png"));
   background-position: center center;
   background-repeat: no-repeat;
   color: #fff;
