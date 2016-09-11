@@ -43,7 +43,6 @@ after "deploy:update_code", :copy_database_config
 # Если вы не используете авторизацию SSH по ключам И ssh-agent,
 # закомментируйте эту опцию.
 ssh_options[:forward_agent] = true
-forward_agent = true
 # Имя вашего проекта в панели управления.
 # Не меняйте это значение без необходимости, оно используется дальше.
 set :application,     "irinaevent"
@@ -84,7 +83,6 @@ set :scm,             :git
 
 ## Если ваш репозиторий в GitHub, используйте такую конфигурацию
  set :repository,    "git@github.com:MrPePeMeskyze/wedding_agency.git"
- set :default_run_options, {:pty => true}
 
 ## --- Ниже этого места ничего менять скорее всего не нужно ---
 
@@ -93,7 +91,7 @@ task :set_current_release, :roles => :app do
     set :current_release, latest_release
 end
 
-  set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use #{rvm_ruby_string} do bundle exec unicorn_rails -Dc #{unicorn_conf})"
+set :unicorn_start_cmd, "(cd #{deploy_to}/releases/initial_release; rvm use #{rvm_ruby_string} do bundle exec unicorn_rails -Dc #{unicorn_conf})"
 
 set :rake, 'bundle exec rake'
 
@@ -115,5 +113,5 @@ namespace :deploy do
   end
 
   set :shared_children, %w(public/uploads public/images log)
-
+  set :ssh_options, { :forward_agent => false }
 end
