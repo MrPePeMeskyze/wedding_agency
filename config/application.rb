@@ -9,7 +9,6 @@ Bundler.require(*Rails.groups)
 module Secrety
   class Application < Rails::Application
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
-    config.assets.paths << "#{Rails.root}/app/assets/fonts/application"
     config.assets.paths << "#{Rails.root}/app/assets/fonts"
     config.serve_static_assets = true
 
