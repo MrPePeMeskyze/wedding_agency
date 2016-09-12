@@ -16,3 +16,4 @@
 !/log/.keep
 /tmp
 /public/uploads
+/config/enviroments/development.rb
