@@ -13,7 +13,11 @@
 	<div class="col-xs-8">
 		<div class="form-group">
 			<%= label_tag(:album_id, raw("<div class='required'>&#10039;</div> Альбом")) %>
-			<%= f.select :album_id, @albums.map{ |albums| [albums.name, albums.id] }.insert(0,'--'),{}, { :class => 'form-control'} %>
+			<% if(params[:album_id].blank?) %>
+				<%= f.select :album_id, @albums.map{ |albums| [albums.name, albums.id] }.insert(0,'--'),{}, { :class => 'form-control'} %>
+			<% else %>
+				<%= f.select :album_id, @albums.map{ |albums| [albums.name, albums.id] }.insert(0,"--"), { :selected => params[:album_id] }, { :class => 'form-control'} %>
+			<% end %>
 		</div>
 	</div>
 </div>

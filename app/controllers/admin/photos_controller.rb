@@ -5,7 +5,12 @@ class Admin::PhotosController < Admin::AdminController
 	before_action :photos_ext, only: [:edit, :update, :new, :create]
 
 	def index
-		@photos = Photos.all.includes(:album).order('albums.sort_order is null, albums.sort_order, photos.is_published desc, photos.sort_order')
+		if params[:album_id]
+			@photos = Photos.where("album_id = ?", params[:album_id]).order('photos.is_published desc, photos.sort_order')
+		else
+			@albums = Albums.where("is_photo = 1").order('is_published desc, sort_order')
+			@photos_general = Photos.all.order('photos.is_published desc, photos.sort_order').limit(8)
+		end
 	end
 
 
@@ -23,7 +28,7 @@ class Admin::PhotosController < Admin::AdminController
 		@photo.auser_id = @oUser.id
 	    if @photo.save
 	    	flash[:success] = "Фото добавлено!"
-	      	redirect_to admin_photos_path
+	      	redirect_to admin_photos_path(album_id: @photo.album_id)
 	    else
 	    	render :new
 		end		
@@ -44,7 +49,7 @@ class Admin::PhotosController < Admin::AdminController
 		@photo.auser_id = @oUser.id
 		if @photo.update_attributes(photos_params)
 			flash[:success] = "Фото успешно отредактированно!"
-			redirect_to admin_photos_path
+			redirect_to admin_photos_path(album_id: @photo.album_id)
 		else
 			render :edit
 		end

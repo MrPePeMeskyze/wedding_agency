@@ -1,0 +1,5 @@
+<tr <% if !album.is_published %> class="not_published" <% end %> > 
+	<th>
+		<%= link_to album.name, :controller => "photos", :action => "index", :album_id => album.id %>
+	</th>
+</tr> 

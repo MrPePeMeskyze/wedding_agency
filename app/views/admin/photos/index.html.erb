@@ -2,23 +2,54 @@
 <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>
 <% end %>
-<h1>Фотографии</h1>
-<table class="table"> 
-	<thead> 
-		<tr style="vertical-align:middle;"> 
-			<th></th> 
-			<th>Альбом</th>
-			<th>Услуга</th>
-			<th>Название</th> 
-			<th class="text-center">Фото</th>
-			<th></th>
-		</tr> 
-	</thead> 
-	<tbody> 
-		<%= render partial: "photo", collection: @photos, :as => :photo %>
-	</tbody>
-</table>
+
+<%if params[:album_id] %>
+	<h1>Фотографии</h1>
+	<table class="table"> 
+		<thead> 
+			<tr style="vertical-align:middle;"> 
+				<th></th> 
+				<th>Альбом</th>
+				<th>Услуга</th>
+				<th>Название</th> 
+				<th class="text-center">Фото</th>
+				<th></th>
+			</tr> 
+		</thead> 
+		<tbody> 
+			<%= render partial: "photo", collection: @photos, :as => :photo %>
+		</tbody>
+	</table>
+<% else %>
+	<h1>Альбомы</h1>
+	<table class="table"> 
+		<thead> 
+			<tr>  
+				<th>Название</th>
+			</tr> 
+		</thead> 
+		<tbody> 
+			<%= render partial: "album", collection: @albums, :as => :album %>
+		</tbody>
+	</table>
+	<h1>Фотографии для главной</h1>
+	<table class="table"> 
+		<thead> 
+			<tr style="vertical-align:middle;"> 
+				<th></th> 
+				<th>Альбом</th>
+				<th>Услуга</th>
+				<th>Название</th> 
+				<th class="text-center">Фото</th>
+				<th></th>
+			</tr> 
+		</thead> 
+		<tbody> 
+			<%= render partial: "photo", collection: @photos_general, :as => :photo %>
+		</tbody>
+	</table>
+<% end %>
 
 <% content_for :right do %>
-	<%= link_to raw("<span class='glyphicon glyphicon-plus-sign'></span>Добавить"), {:controller => "photos", :action => "new"}, class: "btn btn-success" %>
+	<%= link_to raw("<span class='glyphicon glyphicon-plus-sign'></span>Добавить"), {:controller => "photos", :action => "new", :album_id => params[:album_id]}, class: "btn btn-success" %>
 <% end %>
