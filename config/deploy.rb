@@ -99,7 +99,7 @@ set :rake, 'bundle exec rake'
 namespace :deploy do
   desc "Start application"
   task :start, :roles => :app do
-    run unicorn_start_cmd
+    run "#{unicorn_rails} -Dc #{unicorn_conf}"
   end
 
   desc "Stop application"
@@ -113,5 +113,6 @@ namespace :deploy do
   end
 
   set :shared_children, %w(public/uploads public/images log)
+  
   set :ssh_options, { :forward_agent => false }
 end

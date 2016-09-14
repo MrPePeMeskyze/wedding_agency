@@ -9,6 +9,8 @@ class PagesController < ApplicationController
 		@photos = Photos.where("is_published = ?", 1).order("sort_order ASC, name").limit(8)
 		@slides = Slides.where("is_published = ?", 1).order("sort_order ASC, name")
 		@clients = Clients.where("is_published = ?", 1).order("sort_order ASC, name")
+		@about_me = Objects.where("id = 3 or permalink = 'about'").first
+		@why_me = Objects.where("id = 4 or permalink = 'why_me'").first
 	end
 
 
