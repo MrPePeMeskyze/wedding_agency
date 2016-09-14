@@ -15,5 +15,5 @@
 /log/*
 !/log/.keep
 /tmp
-/public/uploads
+/public/uploads/*
 /config/environments/development.rb
