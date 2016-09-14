@@ -44,13 +44,13 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp   
    ActionMailer::Base.smtp_settings = {  
-    :address              => "smtp.mail.ru",  
-    :port                 => 465 ,  
-    :domain               => "bk.ru",  
-    :user_name            => 'irina_prazdnik@bk.ru',  
-    :password             => "irina2588",  
+    :address              => "smtp.locum.ru",  
+    :port                 => 25,  
+    :domain               => "fbrparty.ru",  
+    :user_name            => 'fbrparty@fbrparty.ru',  
+    :password             => "E8coo0d4",  
     :authentication       => :login,
-    :enable_starttls_auto => true
+    :enable_starttls_auto => false
   }
   
 end
