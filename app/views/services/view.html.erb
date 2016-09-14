@@ -47,7 +47,7 @@
                         <div class="services-slider">
                           <% @service.photos.each do |photo| %>
                             <div class="whychoose-singleslide">
-                              <%= image_tag(photo.image.url, :alt => photo.name) %>
+                              <%= image_tag(photo.image.url(:view_thumbnail), :alt => photo.name) %>
                               <div class="caption_description"><%= photo.name %></div>
                             </div>
                           <% end %>

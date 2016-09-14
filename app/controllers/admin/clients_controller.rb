@@ -4,7 +4,7 @@
 class Admin::ClientsController < Admin::AdminController
 
 	def index
-		@clients = Clients.all.order('is_published desc, sort_order')
+		@clients = Clients.all.order('is_published desc, sort_order, created_at desc')
 	end
 
 

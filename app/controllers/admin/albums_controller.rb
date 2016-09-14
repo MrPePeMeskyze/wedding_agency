@@ -4,7 +4,7 @@
 class Admin::AlbumsController < Admin::AdminController
 
 	def index
-		@albums = Albums.all.order('is_published desc, sort_order')
+		@albums = Albums.all.order('is_published desc, sort_order, created_at desc')
 	end
 
 

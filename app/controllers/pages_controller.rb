@@ -5,10 +5,10 @@ class PagesController < ApplicationController
 ##############################################################################
 	def index
 		@services = Services.where("is_published = ?", 1).order("sort_order ASC, header")
-		@videos = Videos.where("is_published = ?", 1).order("sort_order ASC, name").limit(6)
-		@photos = Photos.where("is_published = ?", 1).order("sort_order ASC, name").limit(8)
-		@slides = Slides.where("is_published = ?", 1).order("sort_order ASC, name")
-		@clients = Clients.where("is_published = ?", 1).order("sort_order ASC, name")
+		@videos = Videos.where("is_published = ?", 1).order("sort_order ASC, created_at desc").limit(6)
+		@photos = Photos.where("is_published = ?", 1).order("sort_order ASC, created_at desc").limit(8)
+		@slides = Slides.where("is_published = ?", 1).order("sort_order ASC, created_at desc")
+		@clients = Clients.where("is_published = ?", 1).order("sort_order ASC, created_at desc")
 		@about_me = Objects.where("id = 3 or permalink = 'about'").first
 		@why_me = Objects.where("id = 4 or permalink = 'why_me'").first
 	end

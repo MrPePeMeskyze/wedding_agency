@@ -5,7 +5,7 @@ class Admin::VideosController < Admin::AdminController
 	before_action :videos_ext, only: [:edit, :update, :new, :create]
 
 	def index
-		@videos = Videos.all.includes(:album).order('albums.sort_order is null, albums.sort_order, videos.is_published desc, videos.sort_order')
+		@videos = Videos.all.includes(:album).order('albums.sort_order is null, albums.sort_order, videos.is_published desc, videos.sort_order, created_at desc')
 	end
 
 

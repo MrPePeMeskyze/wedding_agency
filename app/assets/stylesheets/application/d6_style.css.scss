@@ -823,7 +823,7 @@ img{
 	float: left;
 	display: inline;
 	width: 100%;
-	padding: 75px 0px;
+	padding: 40px 0px;
 }
 .whyChoose-left { 
   display: inline;
@@ -2361,7 +2361,7 @@ width: 100%;
 	float: left;
 	display: inline;
 	width: 100%;
-	padding: 75px 0px;
+	padding: 40px 0px;
 }
 .gallery-area{
 	float: left;
@@ -2883,7 +2883,6 @@ a.gallery-iteam:hover .image-effect::before {
 .navbar-right .dropdown-menu::before {display: none;}
 .whychoose-singleslide img {width: 100%;}
 .whyChoose-left {width: 100%;}
-.whyChoose-right {margin-top: 50px;}
 .counter-box {margin-bottom: 40px;width: 100%;}
 .counter-box::after {width: 103%;}
 .single-blog-left {width: 20%;}
@@ -2999,7 +2998,10 @@ a.gallery-iteam:hover .image-effect::before {
 	float: left;
 	display: inline;
 	width: 100%;
-	padding: 75px 0px;
+	padding: 40px 0px;
+}
+#gallery_main_general{
+	padding: 40px 0px;
 }
 
 #gallery_main{

@@ -4,7 +4,7 @@
 class Admin::SlidesController < Admin::AdminController
 
 	def index
-		@slides = Slides.all.order('is_published desc, sort_order')
+		@slides = Slides.all.order('is_published desc, sort_order, created_at desc')
 	end
 
 
