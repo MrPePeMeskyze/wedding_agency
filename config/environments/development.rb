@@ -41,16 +41,15 @@ Rails.application.configure do
   
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :smtp   
+  config.action_mailer.raise_delivery_errors = true  
    ActionMailer::Base.smtp_settings = {  
     :address              => "smtp.locum.ru",  
-    :port                 => 25,  
+    :port                 => 2525,  
     :domain               => "fbrparty.ru",  
-    :user_name            => 'fbrparty@fbrparty.ru',  
-    :password             => "E8coo0d4",  
+    :user_name            => "fbrparty@fbrparty.ru",  
+    :password             => "wdrbnlcvn453",  
     :authentication       => :login,
-    :enable_starttls_auto => false
+    :openssl_verify_mode  => "none"
   }
   
 end

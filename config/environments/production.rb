@@ -82,13 +82,13 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   ActionMailer::Base.smtp_settings = {  
-    :address              => "smtp.gmail.com",  
-    :port                 => 587,  
-    :domain               => "gmail.com",  
-    :user_name            => 'predatorqwerty2@gmail.com',  
-    :password             => "predator69",  
-    :authentication       => "plain",
-    :enable_starttls_auto => true
+    :address              => "smtp.locum.ru",  
+    :port                 => 2525,  
+    :domain               => "fbrparty.ru",  
+    :user_name            => "fbrparty@fbrparty.ru",  
+    :password             => "wdrbnlcvn453",  
+    :authentication       => :login,
+    :openssl_verify_mode  => "none"
   }
 
 end

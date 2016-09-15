@@ -45,7 +45,7 @@
                       </div>
                       <div class="whyChoose-left service-slider clearfix">
                         <div class="services-slider">
-                          <% @service.photos.each do |photo| %>
+                          <% @service.photos.where('is_published = 1').order('sort_order, created_at desc').each do |photo| %>
                             <div class="whychoose-singleslide">
                               <%= image_tag(photo.image.url(:view_thumbnail), :alt => photo.name) %>
                               <div class="caption_description"><%= photo.name %></div>

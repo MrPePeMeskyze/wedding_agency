@@ -21,40 +21,42 @@
 
 <div class="col-md-12 col-sm-12">
   <div class="blogArchive-area">
-    <div class="row">
-      <div class="col-md-12 col-sm-12">  
-        <div class="blog-content block-margin">
-          <div class="single-Blog">
-            <div class="col-md-2 col-sm-2">
-              <div class="review-button readmore_area">
-                <a data-toggle="modal" data-target="#review_modal" data-hover="Добавить отзыв"><span>Добавить отзыв</span></a>  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12">  
+          <div class="blog-content block-margin">
+            <div class="single-Blog">
+              <div class="col-md-2 col-sm-2">
+                <div class="review-button readmore_area">
+                  <a data-toggle="modal" data-target="#review_modal" data-hover="Добавить отзыв"><span>Добавить отзыв</span></a>  
+                </div>
               </div>
-            </div>
-             <div class="col-md-10 col-sm-10">
-              <% if @video_reviews %>
-                <div class="video-reviews-button readmore_area">
-                  <a href="/videos/<%= @video_reviews.permalink %>/" data-hover="Видео отзывы"><span>Видео отзывы</span></a>  
-                </div> 
-              <% end %>
-              <div class="service-area">
-                <div class="section-heading">
-                  <h1><%= @object.header %></h1>
-                  <div class="line"></div>            
-                </div>              
-              </div>
-              <div class="row">
-    						<%= render partial: "reviews/review", collection: @reviews, :as => :review %>
-                <div class="blog-pagination">
-                  <nav>
-                    <%= will_paginate(:previous_label => "<span class='fa fa-angle-left'></span>",:next_label => "<span class='fa fa-angle-right'></span>") %>    
-                  </nav>
+               <div class="col-md-10 col-sm-10">
+                <% if @video_reviews %>
+                  <div class="video-reviews-button readmore_area">
+                    <a href="/videos/<%= @video_reviews.permalink %>/" data-hover="Видео отзывы"><span>Видео отзывы</span></a>  
+                  </div> 
+                <% end %>
+                <div class="service-area">
+                  <div class="section-heading">
+                    <h1><%= @object.header %></h1>
+                    <div class="line"></div>            
+                  </div>              
+                </div>
+                <div class="row reviews_view">
+      						<%= render partial: "reviews/review", collection: @reviews, :as => :review %>
+                  <div class="blog-pagination">
+                    <nav>
+                      <%= will_paginate(:previous_label => "<span class='fa fa-angle-left'></span>",:next_label => "<span class='fa fa-angle-right'></span>") %>    
+                    </nav>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>                     
-      </div>
-    </div>                   
+          </div>                     
+        </div>
+      </div>  
+    </div>                 
   </div>
 </div>
 

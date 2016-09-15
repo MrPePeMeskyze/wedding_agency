@@ -241,11 +241,11 @@ jQuery(function($){
 		$(".appointment-msg").hide();
 		document.getElementById('feedback').reset()
 		$("#name_file").html('');
-		$("#new_reviews .rating").val(0);
-		$('.rating-input i').removeClass('glyphicon-star').addClass('glyphicon-star-empty')
 	});
 	$('.review-button a').click(function(event){
 		document.getElementById('new_reviews').reset()
+		$("#new_reviews .rating").val(0);
+		$('#new_reviews .rating-input i').removeClass('glyphicon-star').addClass('glyphicon-star-empty')
 	});
     $('#datetimepicker').datetimepicker({
     	format: 'DD/MM/YYYY'

@@ -2830,6 +2830,9 @@ a.gallery-iteam:hover .image-effect::before {
 
 
 @media(max-width:991px ){	
+  .reviews_view .col-lg-6:first-child{
+  	margin-top:185px;
+  }
   .container #navbar{margin-left: -10px;}
   .navbar-header .contact-info{ margin-right: 52px !important;}
   .feedback-block{margin-top: -55px !important;}
