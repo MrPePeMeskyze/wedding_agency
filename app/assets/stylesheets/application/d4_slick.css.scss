@@ -23,8 +23,6 @@
 .slick-loading .slick-slide { visibility: hidden; }
 .slick-vertical .slick-slide { display: block; height: auto; border: 1px solid transparent; }
 
-/* Icons */
-@font-face { font-family: "slick"; src: url("../application/slick.eot"); src: url("../application/slick.eot?#iefix") format("embedded-opentype"), url("../application/slick.woff") format("woff"), url("../application/slick.ttf") format("truetype"), url("../application/slick.svg#slick") format("svg"); font-weight: normal; font-style: normal; }
 /* Arrows */
  .slick-prev, .slick-next {
   border: medium none;

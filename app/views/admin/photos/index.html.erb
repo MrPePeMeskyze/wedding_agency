@@ -32,6 +32,24 @@
 			<%= render partial: "album", collection: @albums, :as => :album %>
 		</tbody>
 	</table>
+	<% if !@photos_without_albums.empty? %>
+		<h1>Фотографии без привязки к альбомам</h1>
+		<table class="table"> 
+			<thead> 
+				<tr style="vertical-align:middle;"> 
+					<th></th> 
+					<th>Альбом</th>
+					<th>Услуга</th>
+					<th>Название</th> 
+					<th class="text-center">Фото</th>
+					<th></th>
+				</tr> 
+			</thead> 
+			<tbody> 
+				<%= render partial: "photo", collection: @photos_without_albums, :as => :photo %>
+			</tbody>
+		</table>
+	<% end %>
 	<h1>Фотографии для главной</h1>
 	<table class="table"> 
 		<thead> 

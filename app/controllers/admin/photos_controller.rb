@@ -8,6 +8,7 @@ class Admin::PhotosController < Admin::AdminController
 		if params[:album_id]
 			@photos = Photos.where("album_id = ?", params[:album_id]).order('photos.is_published desc, photos.sort_order, created_at desc')
 		else
+			@photos_without_albums = Photos.where('album_id = 0').order('photos.is_published desc, photos.sort_order, created_at desc')
 			@albums = Albums.where("is_photo = 1").order('is_published desc, sort_order, created_at desc')
 			@photos_general = Photos.all.order('photos.is_published desc, photos.sort_order, created_at desc').limit(8)
 		end

@@ -324,7 +324,6 @@ img{
     font-weight: bold;
     line-height: 1.42857;
     padding: 5px 20px;
-    white-space: nowrap;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
     -webkit-transition: all 0.5s;
@@ -1457,7 +1456,6 @@ figure.blog-figure:hover img {
 .blog-img figure img {
 	position: relative;
 	display: block;
-	min-height: 100%;
 	max-width: 100%;
 	opacity: 0.8;
 }
@@ -2440,7 +2438,6 @@ a.gallery-iteam:hover img {
 .albums-list a img {
 	position: relative;
 	display: block;
-	min-height: 100%;
 	max-width: 100%;
 	opacity: 0.8;
 }
@@ -2865,14 +2862,20 @@ a.gallery-iteam:hover .image-effect::before {
   .slider-text h2 {font-size: 45px;line-height: 50px;}
   .slider-text p {font-size: 25px;}
   .footer-copyright{margin-left: -22px;}
-
+  .navbar-right .dropdown-menu::before{
+		left: 50px;
+		right: 0px;
+	}	
+	.navbar-right .dropdown-menu{
+		left: 0px;
+    	right: auto;
+	}
 }
-
 
 @media(max-width:767px ){
 .navbar-right~.navbar-right{
 	margin-right: 25px !important;
-}
+}	
 .navbar-header .navbar-brand{ margin-left: 25px !important;}
 .contact-info{margin-top: 10px !important;}
 .feedback-header a{margin-top: 15px !important; margin-bottom: 15px !important; margin-left: -40px !important;}
@@ -2882,7 +2885,7 @@ a.gallery-iteam:hover .image-effect::before {
 .navbar-default .navbar-toggle .icon-bar {background-color: #fff;}
 .navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{background-color: transparent;}
 .navbar-default .navbar-brand {margin-bottom: 10px;margin-top: 0;}
-.navbar-right .dropdown-menu{ left: 0px; top: 47px;}
+.navbar-right .dropdown-menu{ right: 28px; left: 0px; top: 47px;}
 .navbar-right .dropdown-menu::before {display: none;}
 .whychoose-singleslide img {width: 100%;}
 .whyChoose-left {width: 100%;}
@@ -2928,6 +2931,7 @@ a.gallery-iteam:hover .image-effect::before {
 	}
 }
 @media(max-width:390px ){
+	.navbar-right .dropdown-menu{ width:100%;}
 	.navbar-brand{   
 		width: 167px !important;;
 	    font-size: 16px !important;;
