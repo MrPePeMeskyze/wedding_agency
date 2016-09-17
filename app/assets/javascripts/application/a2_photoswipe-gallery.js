@@ -24,9 +24,13 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             linkEl = figureEl.children[0]; // <a> element
 
             //Instead of asking for height and width please calculate it for us We are lazy ;) Juni
-
-            var j_width = $(window).width() - 250;
-            var j_height = $(window).height() + 150;
+			if($(window).width() > 500){
+	            var j_width = $(window).width() - 250;
+	            var j_height = $(window).height() + 150;
+	        } else {
+	        	var j_width = $(window).width();
+	            var j_height = $(window).height();
+	        }
             size = [j_width, j_height]
 
             // create slide object

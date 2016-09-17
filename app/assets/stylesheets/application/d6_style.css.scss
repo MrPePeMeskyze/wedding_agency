@@ -2931,6 +2931,7 @@ a.gallery-iteam:hover .image-effect::before {
 	}
 }
 @media(max-width:390px ){
+	.navbar-collapse{padding-left: 0px;}
 	.navbar-right .dropdown-menu{ width:100%;}
 	.navbar-brand{   
 		width: 167px !important;;
