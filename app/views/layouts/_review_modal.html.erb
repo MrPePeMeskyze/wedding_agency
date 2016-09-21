@@ -10,7 +10,7 @@
 		  </div>
 		  <div class="appointment-area">
 		  	<% @reviews = Reviews.new %>
-		  	<%= form_for @reviews, :format => 'js', :url => { :action => :create }, html: { multipart: true, :class => "appointment-form" }, :remote => true do |f| %>
+		  	<%= form_for @reviews, format: :html, :url => { :action => :create }, html: { multipart: true, :class => "appointment-form" }, :remote => false do |f| %>
 				<div class="col-md-12 col-sm-12">
 				  <label class="control-label">Представьтесь <span class="required">*</span>
 				  </label>

@@ -14,9 +14,13 @@ skip_before_filter :verify_authenticity_token, only: [:create]
 	def create	      
 		@review = Reviews.new(reviews_params)
 		@review.session_id = @oSession.id
-		    if @review.save
-	    		head :no_content
-		    end
+		respond_to do |format|
+			if @review.save
+		        format.html do
+		          redirect_to '/reviews/'
+		        end
+			end
+		end
 	end
 	
 
