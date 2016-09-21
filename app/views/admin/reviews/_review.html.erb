@@ -1,25 +1,25 @@
 <tr <% if !review.is_published %> class="not_published" <% end %> > 
 	
 	<% if review.avatar %>
-		<th style="width: 10%;" class="text-center" style="vertical-align:middle;">
+		<th class="text-center" style="vertical-align:middle;">
 			<a class="fancybox" href="<%= review.avatar.url if review.avatar? %>">
 		    	<%= image_tag review.avatar.url(:view_thumbnail) %>
 		    </a>
 		</th>
 	<% else %>
-		<th style="width: 10%;"></th>
+		<th></th>
 	<% end %>
 
-	<th style="width: 10%;" class="text-center">
+	<th class="text-center">
 		<%= review.fio %>
 	</th>
-	<th style="width: 10%;" class="text-center">
+	<th class="text-center">
 		<%= review.event %>
 	</th>
-	<th style="width: 10%;" class="text-center">
+	<th class="text-center">
 		<%= review.date %>
 	</th>
-	<th style="width: 10%;" class="text-center">
+	<th class="text-center">
 		<% if !review.rate.blank? %>
 			<div class="rating-input">
 				<% (1..review.rate.round).each do |i| %>
@@ -28,12 +28,12 @@
 			</div>
 		<% end %>
 	</th>
-	<th style="width: 40%; font-size:12px;" class="text-center">
+	<th style="font-size:12px;" class="text-center">
 		<%= review.body %>
 	</th>
 
 
-	<th style="width: 10%;">
+	<th style="width: 100px;">
 		<%= link_to 'Редактировать', edit_admin_review_path(review.id), :class => 'text-success' %>
 	</th>
 </tr> 

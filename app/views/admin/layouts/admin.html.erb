@@ -9,12 +9,19 @@
 	    </nav>		
 		<div class="container">
 			<div class="row">
-				<div class="col-md-9">
-					<%= yield %>
-				</div>
+				<% if request.path_info == '/admin/reviews' %>
+					<div class="col-md-12">
+						<%= yield %>
+					</div>
+				<% else %>
+					<div class="col-md-9">
+						<%= yield %>
+					</div>
+				<% end %>
 				<div style="border-left:1px solid black" class="col-md-3">
 					<%= yield :right %>
 				</div>
+
 			</div>
 		</div>
 	</body>
