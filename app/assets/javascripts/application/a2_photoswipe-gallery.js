@@ -24,43 +24,10 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             linkEl = figureEl.children[0]; // <a> element
 
             //Instead of asking for height and width please calculate it for us We are lazy ;) Juni
-			if($(window).width() >= 2200){
-	            var j_width = $(window).width() - 800;
-	            var j_height = $(window).height() + 900;
-	        } else {
-				if($(window).width() >= 2100){
-		            var j_width = $(window).width() - 700;
-		            var j_height = $(window).height() + 600;
-		        } else {
-					if($(window).width() >= 2000){
-			            var j_width = $(window).width() - 600;
-			            var j_height = $(window).height() + 500;
-			        } else {
-						if($(window).width() >= 1900){
-				            var j_width = $(window).width() - 500;
-				            var j_height = $(window).height() + 400;
-				        } else {
-							if($(window).width() >= 1600){
-					            var j_width = $(window).width() - 400;
-					            var j_height = $(window).height() + 300;
-					        } else {	
-								if($(window).width() >= 900){
-						            var j_width = $(window).width() - 250;
-						            var j_height = $(window).height() + 150;
-						        } else {
-						        	if($(window).width() >= 600){
-							        	var j_width = $(window).width() - 100;
-							            var j_height = $(window).height() + 50;
-							        } else {
-							        	var j_width = $(window).width();
-							            var j_height = $(window).height();
-							        }
-							    }
-							}
-						}
-					}
-				}
-			}
+			
+        	var j_width = $(window).width();
+            var j_height = $(window).height();
+							        
             size = [j_width, j_height]
 
             // create slide object
