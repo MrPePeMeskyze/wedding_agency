@@ -233,3 +233,4 @@
 
     // execute above function
     initPhotoSwipeFromDOM(gallerySelector);
+}
