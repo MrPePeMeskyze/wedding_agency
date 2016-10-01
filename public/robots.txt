@@ -6,6 +6,6 @@
 User-agent: *
 Disallow: /lang/
 Disallow: /admin/
-Host: irinaevent.ru
-Sitemap: http://irinaevent.ru/uploads/sitemap.xml
-Sitemap: http://irinaevent.ru/uploads/sitemap.xml.gz
+Host: www.irinaevent.ru
+Sitemap: http://www.irinaevent.ru/uploads/sitemap.xml
+Sitemap: http://www.irinaevent.ru/uploads/sitemap.xml.gz

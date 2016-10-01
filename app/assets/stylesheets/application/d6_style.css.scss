@@ -345,12 +345,15 @@ img{
 	font-size: 24px;
 	margin-top: 0px;
 	font-weight: bold;
-	width: 250px;
+	width: 200px;
+	margin-top:-10px;
+	height: 125px;
 	white-space: nowrap;
 	line-height: 31px;
 }
 .navbar-brand img{
-	width: 100%;
+	height: 100%;
+	margin: 0 auto;
 }
 .navbar-brand>i{
 	margin-right: 8px;
@@ -2830,11 +2833,14 @@ a.gallery-iteam:hover .image-effect::before {
   .reviews_view .col-lg-6:first-child{
   	margin-top:185px;
   }
+  .navbar-header .contact-info {
+	margin-top: -40px !important;
+  }
   .container #navbar{margin-left: -10px;}
   .navbar-header .contact-info{ margin-right: 52px !important;}
-  .feedback-block{margin-top: -55px !important;}
+  .feedback-block{margin-top: -95px !important;}
   .navbar-header {float: none;text-align: center;}
-  .navbar-brand {display: inline-block;float: none;font-size: 18px;width: 290px;}
+  .navbar-brand {display: inline-block;float: none;font-size: 18px;width: 270px;}
   .sl-slider h2 {font-size: 36px;line-height: 40px;}
   .sl-slider p {font-size: 25px;}
   .sl-slider-wrapper {height: 500px;}
@@ -2884,7 +2890,7 @@ a.gallery-iteam:hover .image-effect::before {
 .navbar-default .navbar-toggle {border-color: #fff;margin-top: 12px;}
 .navbar-default .navbar-toggle .icon-bar {background-color: #fff;}
 .navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{background-color: transparent;}
-.navbar-default .navbar-brand {margin-bottom: 10px;margin-top: 0;}
+.navbar-default .navbar-brand {margin-top: 0;}
 .navbar-right .dropdown-menu{ right: 28px; left: 0px; top: 47px;}
 .navbar-right .dropdown-menu::before {display: none;}
 .whychoose-singleslide img {width: 100%;}
