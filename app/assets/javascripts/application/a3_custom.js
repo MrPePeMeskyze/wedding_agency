@@ -160,11 +160,11 @@ jQuery(function($){
 	/*  8. PRELOADER 
 	/* ----------------------------------------------------------- */ 
 
-	  jQuery(window).load(function() { // makes sure the whole site is loaded
-      $('#status').fadeOut(); // will first fade out the loading animation
-      $('#preloader').delay(100).fadeOut('slow'); // will fade out the white DIV that covers the website.
-      $('body').delay(100).css({'overflow':'visible'});
-    })
+//	jQuery(window).load(function() { // makes sure the whole site is loaded
+	  $('#status').fadeOut(); // will first fade out the loading animation
+	  $('#preloader').delay(1000).fadeOut('slow'); // will fade out the white DIV that covers the website.
+	  $('body').delay(1000).css({'overflow':'visible'});
+//	})
 	  
 	/* ----------------------------------------------------------- */
 	/*  9. SCROLL TOP BUTTON
@@ -204,6 +204,7 @@ jQuery(function($){
 	
 
 	$('.feedback-button').click(function(event){
+		var a = $(this);
 		$(this).closest('.appointment-form').find('input').removeClass('alert')
 		$(this).closest('.appointment-form').find('textarea').removeClass('alert')
 		var fio = $(this).closest('.appointment-form').find('#fio');
@@ -221,23 +222,44 @@ jQuery(function($){
 		}
 		if(fio.val() != "" && email.val() != "" && body.val() != ""){
 			$.ajax({
-			  url: "/sendmail", data: 'fio='+fio.val()+'&email='+email.val()+'&body='+body.val()+'&phone='+phone.val(), 
+			  url: "/sendmail", 
+			  data: 'fio='+fio.val()+'&email='+email.val()+'&body='+body.val()+'&phone='+phone.val() + '&resp=' + $("#g-recaptcha-response").val(), 
 			  format: 'json',
 			  dataType: 'json',
 			  type: "POST",
-			  error: function(data){
-			    alert('Server error');
+			  success: function(result){
+			    if(result.json_fio == 0){
+					fio.addClass("alert");
+				}
+				if(result.json_mail == 0){
+					email.addClass("alert");
+				}
+				if(result.json_body == 0){
+					body.addClass("alert");
+				}
+				if(result.status == false){
+					$("#g-recaptcha").addClass("alert");
+				}
+
+				if(result.json_body != 0 && result.json_mail != 0 && result.json_fio != 0 && result.status == true){
+					a.closest(".appointment-form").hide();
+					grecaptcha.reset();
+					a.closest(".modal-body").find(".appointment-msg").show();
+					a.closest(".modal-body").find(".appointment-msg").html("<div class='feedback-succsess col-md-12 col-sm-12'>Сообщение успешно отправлено!</div>")
+			  	}
+			  },
+			  error: function(result){
+			  	alert('Server error!');
 			  }
 			});
-			$(this).closest(".appointment-form").hide();
-			$(this).closest(".modal-body").find(".appointment-msg").show();
-			$(this).closest(".modal-body").find(".appointment-msg").html("<div class='feedback-succsess col-md-12 col-sm-12'>Сообщение успешно отправлено!</div>")
 		}
 	});
 	$('.feedback-header a, .review-button a').click(function(event){
 		$(".appointment-form").show();
 		$(".appointment-form").find('input').removeClass('alert')
 		$(".appointment-form").find('textarea').removeClass('alert')
+		$("#g-recaptcha").removeClass('alert')
+		grecaptcha.reset();
 		$(".appointment-msg").hide();
 		document.getElementById('feedback').reset()
 		$("#name_file").html('');

@@ -2,6 +2,13 @@ class PagesController < ApplicationController
 	before_action :init
 	respond_to :html, :json
 	skip_before_filter :verify_authenticity_token, only: [:sendmail]
+
+##############################################################################
+	def verify_google_recptcha(secret_key,response)
+		status = `curl "https://www.google.com/recaptcha/api/siteverify?secret=#{secret_key}&response=#{response}"`
+		hash = JSON.parse(status)
+		hash["success"] == true ? true : false
+	end
 ##############################################################################
 	def index
 		@services = Services.where("is_published = ?", 1).order("sort_order ASC, header")
@@ -23,12 +30,42 @@ class PagesController < ApplicationController
 
 ##############################################################################
 	def sendmail
-	      fio = params[:fio]
-	      email = params[:email]
-	      phone = params[:phone]
-	      body = params[:body]
-	      Feedback.contact(fio, email, phone, body).deliver 
-	      head :no_content
+
+		status = verify_google_recptcha("6LeNUxwUAAAAALRcvk0JxGVxI2AlSoT_tbilphH1", params["resp"])
+
+		respond_to do |format|
+			check_fio = 0
+			check_mail = 0
+			check_body = 0
+
+			if (params[:fio] != nil && params[:fio] != "")
+				check_fio = 1
+			end
+
+			if (params[:email] != nil && params[:email] != "")
+				check_mail = 1
+			end
+
+			if (params[:body] != nil && params[:body] != "")
+				check_body = 1
+			end 
+
+			rez = {"json_fio" => check_fio, "json_mail" => check_mail, "json_body" => check_body, "status" => status}
+
+			if (check_body == 1 && check_mail == 1 && check_fio == 1 && status == true)
+				format.html { redirect_to :back, notice: "Письмо успешно отправлено!"}
+				format.json { render json: rez}
+
+				fio = params[:fio]
+				email = params[:email]
+				phone = params[:phone]
+				body = params[:body]
+				Feedback.contact(fio, email, phone, body).deliver 
+			else
+				format.html { render :back, notice: "Ошибка сервера!" }
+				format.json { render json: rez}
+			end
+		end
 	end
 
 
